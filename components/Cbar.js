@@ -11,7 +11,7 @@ const windowStyle = {
 export default function chatWin() {
     return (
         <Layout style={{ width: "25ch"}}>
-          asdf
+          asdffdsafasdfasfd
         </Layout>
     )
 }

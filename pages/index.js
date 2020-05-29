@@ -3,7 +3,8 @@ import Layout from '../components/MyLayout.js';
 import Cbar from '../components/Cbar.js';
 import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField } from '@material-ui/core';
+import { TextField, Container } from '@material-ui/core';
+import Chat from'../components/chat';
 
 const cardStyle = {
   marginTop: "3%"
@@ -15,7 +16,9 @@ export default function Blog() {
       <Layout>
       <h1>Girack α</h1>
         <Cbar />
-        <TextField style={{ width: "100%" }} id="standard-full-width" label="メッセージ" variant="filled" />
+        <Container fluid>
+        <Chat activeUser={"user"} />
+        </Container>
       </Layout>
     </>
   )
