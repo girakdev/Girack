@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Layout from '../components/MyLayout.js';
 import { Grid, Button } from '@material-ui/core';
 import Link from 'next/link';
+import InsertS from "../styles/chatStyle.js";
 
+/*
 const btStyle = {
     width: "100%",
-    backgroundColor: "gray",
     border: "solid #DDD 2px",
-    borderRadius: "10ch",
-}
+}*/
 
 function checkLoc(Clink) {
     if ( location.search.indexOf(Clink) != -1 ) {
@@ -20,12 +19,14 @@ function checkLoc(Clink) {
         return null;
 
     }
+    console.log("checked with " + Clink);
 
 }
 
 export default function chatWin() {
     return (
-        <Layout>
+<>
+<InsertS />
 <Grid
     
     container
@@ -35,17 +36,17 @@ export default function chatWin() {
     spacing={1}
     style={{textAlign:"left"}}
 >
-    <Grid item xs>
-        #<Link href="/"><Button variant={{checkLoc("")}}>general</Button></Link>
+    <Grid item style={{width: "100%"}}>
+        <Link href="/"><button className="butCh">general</button></Link>
     </Grid>
-    <Grid item xs>
-        #<Link href="/?=random"><Button>random</Button></Link>
+    <Grid item fluid="true">
+        <Link href="/?=random"><button>random</button></Link>
     </Grid>
-    <Grid item xs>
-        #<Button>devs</Button>
+    <Grid item>
+        <button>devs</button>
     </Grid>
 
 </Grid>
-        </Layout>
+</>
     )
 }

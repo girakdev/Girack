@@ -30,6 +30,12 @@ export default function insertStyle() {
     background-color: #DDD;
 }
 
+.btStyle
+{
+    width: 100%;
+    border: solid #DDD 2pc;
+}
+
 `}</style>
 
     )
