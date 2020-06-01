@@ -10,27 +10,30 @@ const layoutStyle = {
 
 }
 
-const chatW_msgList = {
-    width: "80%",
+
+//メッセージを放り込む部分
+const chatWL = {
+    width: "100%",
     height: "70%",
-    position: "relative"
+    position: "relative",
+    border: "solid 3px red"
 
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles =createStyles({
     cw: {
         width: "80%",
         height: "70%",
         position: "relative"
     },
-}));
+});
   
 
 export default function chatWin() {
-    const classes = useStyles();
+    //const classes = useStyles();
     return (
         <>
-        <div className={classes.cw}>
+        <div style={chatWL}>
             <p>asdf</p>
         </div>
         </>

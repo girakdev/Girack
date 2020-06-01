@@ -1,3 +1,5 @@
+// THIS IS A STYLE FILE FOR index.js !!!
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
