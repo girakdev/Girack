@@ -5,11 +5,15 @@ import { Grid, Button } from '@material-ui/core';
 import Link from 'next/link';
 import InsertS from "../styles/chatStyle.js";
 
-/*
+
 const btStyle = {
     width: "100%",
     border: "solid #DDD 2px",
-}*/
+    "&:hover": {
+        backgroundColor: "rgba(0, 0, 0, 0.4)",
+    },
+}
+
 
 function checkLoc(Clink) {
     if ( location.search.indexOf(Clink) != -1 ) {
@@ -24,6 +28,7 @@ function checkLoc(Clink) {
 }
 
 export default function chatWin() {
+
     return (
 <>
 <InsertS />
@@ -34,12 +39,11 @@ export default function chatWin() {
     justify="center"
     alignItems="flex-start"
     spacing={1}
-    style={{textAlign:"left"}}
 >
     <Grid item style={{width: "100%"}}>
-        <Link href="/"><button className="butCh">general</button></Link>
+        <Link href="/"><button style={btStyle}>general</button></Link>
     </Grid>
-    <Grid item fluid="true">
+    <Grid item>
         <Link href="/?=random"><button>random</button></Link>
     </Grid>
     <Grid item>

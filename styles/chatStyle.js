@@ -22,11 +22,10 @@ button
     width: 100%;
     border: 0;
     margin: 0;
-}
-
-button:hover
-{
-    background-color: rgba(0, 0, 0, 0.9):
+    padding: 3px;
+    padding-left: 1ch;
+    text-align: left;
+    font-size: 18px;
 }
 
 `}</style>
