@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import { Container, Button } from '@material-ui/core';
 
 const layoutStyle = {
@@ -9,10 +10,27 @@ const layoutStyle = {
 
 }
 
+const chatW_msgList = {
+    width: "80%",
+    height: "70%",
+    position: "relative"
+
+}
+
+const useStyles = makeStyles((theme) => ({
+    chatW: {
+        width: "80%",
+        height: "70%",
+        position: "relative"
+    },
+}));
+  
+
 export default function chatWin() {
+    const cls = useStyles();
     return (
-        <Container>
+        <div className={cls.chatW}>
             <p>asdf</p>
-        </Container>
+        </div>
     )
 }
