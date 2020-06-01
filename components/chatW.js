@@ -11,8 +11,8 @@ const layoutStyle = {
 
 export default function chatWin() {
     return (
-        <Container style={layoutStyle}>
-            asdf
+        <Container>
+            <p>asdf</p>
         </Container>
     )
 }

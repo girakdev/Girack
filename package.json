@@ -9,15 +9,15 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.10.0",
-    "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "express": "^4.17.1",
     "next": "^9.4.4",
-    "pusher": "^3.0.1",
-    "pusher-js": "^6.0.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "react-mdl": "^2.1.0"
+    "react-mdl": "^2.1.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
   },
   "main": "index.js",
   "devDependencies": {},
