@@ -8,15 +8,17 @@ import InsertS from "../styles/chatStyle.js";
 
 const useStyles = makeStyles(theme => ({
     butCh: {
-      width: "100%",
-      margin: 0,
-      padding: "3px",
-      paddingLeft: "1ch",
-      textAlign: "left",
-      fontSize: "18px",
-      '&:hover': {
-          backgroundColor: "rgba(0, 0, 0, 0.3)",
-      }  
+        border: "none",
+        backgroundColor: "rgba(0, 0, 0, 0.0)",
+        width: "100%",
+        margin: 0,
+        padding: "3px",
+        paddingLeft: "1ch",
+        textAlign: "left",
+        fontSize: "18px",
+        '&:hover': {
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+        }  
     },
   }));
 
@@ -33,11 +35,44 @@ function checkLoc(Clink) {
 
 }
 
+
+function asdf(cl) {
+    var list = [];
+
+    var chList= [
+        "general",
+        "random",
+        "devs",
+    ];
+
+    for ( const [index, value] of chList.entries() ) {
+        //list.push(<p>{chList[i]}</p>);
+        list.push(
+            <li key={index}>
+            <Grid item style={{width: "100%"}}>
+            <Link href="/"><button className={cl.butCh}>
+            {value}
+            </button></Link>
+            </Grid>
+            </li>
+        )
+
+    }
+
+    return (
+        <span>
+            {list}
+        </span>
+    )
+}
+
 export default function chatWin() {
     const classes = useStyles();
     return (
+        <><InsertS />{asdf(classes)}</>
+        /*
 <>
-<InsertS />
+
 <Grid
     
     container
@@ -57,6 +92,6 @@ export default function chatWin() {
     </Grid>
 
 </Grid>
-</>
+</>*/
     )
 }

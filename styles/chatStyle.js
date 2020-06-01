@@ -8,24 +8,11 @@ export default function insertStyle() {
     return (
 <style jsx global> {`
 
-.butCh
+li
 {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 0;
     margin: 0;
-}
-
-button
-{
-    background-color: rgba(0, 0, 0, 0.0);
-    width: 100%;
-    border: 0;
-    margin: 0;
-    padding: 3px;
-    padding-left: 1ch;
-    text-align: left;
-    font-size: 18px;
+    padding: 0;
+    border: none;
 }
 
 `}</style>
