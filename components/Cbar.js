@@ -11,16 +11,7 @@ const btStyle = {
     borderRadius: "10ch",
 }
 
-const btStyles = makeStyles((theme) => ({
-    but: {
-      width: "100%"
-
-    },
-
-}));
-
 export default function chatWin() {
-    //const cls = btStyles();
     return (
         <Layout>
 <Grid
