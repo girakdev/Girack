@@ -11,26 +11,50 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  takasa: {
-    height: 500
+  forWin: {
+    height: "100%",
+    width: "67%",
+    position: "absolute",
+    right: 0,
+    top: 0,
+    border: "solid 4px #DDD",
+    padding: 0,
+    margin: 0,
   },
-  forGrid: {
-    width: "100%",
-    flexGrow: 1,
-  },
+  forBar: {
+    height: "100%",
+    width: "27%",
+    position: "absolute",
+    left: 0,
+    top: 0,
+    border: "solid 4px #DDD"
+  }
 }));
 
 export default function Blog() {
   //通信するためのSocket
   const socket = io();
-  const classes= useStyles();
+  const cls= useStyles();
 
-  socket.on("now", data => {
-    console.log(data.message);
+  //初期メッセージ
+    socket.on("now", data => {
+        console.log(data.message);
 
-  });
+    });
 
   return (
+<>
+<div className={cls.forBar}>
+    <Cbar />
+</div>
+<div className={cls.forWin}>
+    <chatW />
+</div>
+</>
+  )
+}
+
+/* backup for main content
 <Container fluid xs="false">
   <Grid
     className={ classes.forGrid }
@@ -56,6 +80,4 @@ export default function Blog() {
     </Grid>
 
   </Grid>
-</Container>
-  )
-}
+  */
