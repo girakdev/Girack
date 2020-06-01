@@ -2,15 +2,12 @@
 import Layout from '../components/MyLayout.js';
 import Cbar from '../components/Cbar.js';
 import Link from 'next/link';
-import chatW from "../components/chatW.js";
+import chatw from "../components/chatW.js";
 import { makeStyles } from '@material-ui/core/styles';
 //import { TextField, Container, Grid } from '@material-ui/core';
 import io from 'socket.io-client';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   forWin: {
     height: "100%",
     width: "80%",
@@ -47,10 +44,10 @@ export default function Blog() {
   return (
 <>
     <div className={cls.forBar}>
-        <Cbar />
+        <Cbar></Cbar>
     </div>
     <div className={cls.forWin}>
-        <chatW />
+        <chatw />
     </div>
 </>
   )

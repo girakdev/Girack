@@ -20,7 +20,7 @@ const btStyles = makeStyles((theme) => ({
 }));
 
 export default function chatWin() {
-    const cls = btStyles();
+    //const cls = btStyles();
     return (
         <Layout>
 <Grid
@@ -32,10 +32,10 @@ export default function chatWin() {
     spacing={1}
 >
     <Grid item xs>
-        <Button size="large" fullWidth="true" fluid>general</Button>
+        <Button size="large">general</Button>
     </Grid>
     <Grid item xs>
-        <button className={cls.but}>random</button>
+        <Button>random</Button>
     </Grid>
     <Grid item xs>
         <Button>devs</Button>

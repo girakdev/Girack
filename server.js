@@ -32,7 +32,7 @@ nextApp.prepare().then(() => {
 
     server.listen(port, (err) => {
         if (err) throw err;
-        console.log("ready on ${port}");
+        console.log("ready on " + port);
 
     });
 
