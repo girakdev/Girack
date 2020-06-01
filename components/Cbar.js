@@ -6,13 +6,19 @@ import Link from 'next/link';
 import InsertS from "../styles/chatStyle.js";
 
 
-const btStyle = {
-    width: "100%",
-    border: "solid #DDD 2px",
-    "&:hover": {
-        backgroundColor: "rgba(0, 0, 0, 0.4)",
+const useStyles = makeStyles(theme => ({
+    butCh: {
+      width: "100%",
+      margin: 0,
+      padding: "3px",
+      paddingLeft: "1ch",
+      textAlign: "left",
+      fontSize: "18px",
+      '&:hover': {
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
+      }  
     },
-}
+  }));
 
 
 function checkLoc(Clink) {
@@ -28,7 +34,7 @@ function checkLoc(Clink) {
 }
 
 export default function chatWin() {
-
+    const classes = useStyles();
     return (
 <>
 <InsertS />
@@ -41,13 +47,13 @@ export default function chatWin() {
     spacing={1}
 >
     <Grid item style={{width: "100%"}}>
-        <Link href="/"><button style={btStyle}>general</button></Link>
+        <Link href="/"><button className={classes.butCh}>general</button></Link>
+    </Grid>
+    <Grid item style={{width: "100%"}}>
+        <Link href="/?=random"><button className={classes.butCh}>random</button></Link>
     </Grid>
     <Grid item>
-        <Link href="/?=random"><button>random</button></Link>
-    </Grid>
-    <Grid item>
-        <button>devs</button>
+        <button className={classes.butCh}>devs</button>
     </Grid>
 
 </Grid>
