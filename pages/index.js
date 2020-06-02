@@ -10,7 +10,7 @@ import io from 'socket.io-client';
 export default function Blog() {
   //通信するためのSocket
   const socket = io();
-  console.log("page loaded");
+  console.log("<<< page loaded >>>");
 
   //初期メッセージ
     socket.on("now", data => {
@@ -29,5 +29,5 @@ export default function Blog() {
     </div>
 </>
   )
-  
+
 }

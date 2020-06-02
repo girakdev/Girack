@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Container, Button } from '@material-ui/core';
+import { Container, Button, Typography } from '@material-ui/core';
 
 const layoutStyle = {
     border: '1px solid #DDD',
@@ -25,25 +25,26 @@ const chatWL = {
 
 }
 
-const useStyles =createStyles({
+const useStyles = createStyles({
     cw: {
         width: "80%",
         height: "70%",
         position: "relative"
     },
 });
-  
+
 
 export default function chatWin() {
     //const classes = useStyles();
     return (
         <>
-        <div style={chatHead}>
-            this is header
-        </div>
-        <div style={chatWL}>
-            <p>asdf</p>
-        </div>
+            <div style={chatHead}>
+                <h6>これがチャンネルヘッダ</h6>
+                <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)" }}>これが説明</Typography>
+            </div>
+            <div style={chatWL}>
+                <p>asdf</p>
+            </div>
         </>
     )
 }

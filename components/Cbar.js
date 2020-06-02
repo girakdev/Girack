@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Link from 'next/link';
 import InsertS from "../styles/chatStyle.js";
 
-//ボタン用のスタイル
+//ボタン用のスタイル（ループで死んでますが）
 const useStyles = makeStyles(theme => ({
     butCh: {
         border: "none",
@@ -22,30 +22,19 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-/* 現在のチャンネルをチェックするようだったやつ
-function checkLoc(Clink) {
-    if ( location.search.indexOf(Clink) != -1 ) {
-        return "outlined";
-
-    } else {
-        return null;
-
-    }
-    console.log("checked with " + Clink);
-
-}*/
-
-
 function asdf(cl) {
+    //ループした要素を取り込む配列の用意
     var list = [];
     console.log(cl.butch);
 
+    //ここはサーバー受け取り予定
     var chList= [
         "general",
         "random",
         "devs",
     ];
 
+    //ループ追加開始
     for ( const [index, value] of chList.entries() ) {
         //list.push(<p>{chList[i]}</p>);
         list.push(
@@ -60,6 +49,7 @@ function asdf(cl) {
 
     }
 
+    //出力
     return (
         <span>
             {list}
@@ -70,7 +60,7 @@ function asdf(cl) {
 export default function chatWin() {
     const classes = useStyles();
     return (
-        <><InsertS />{asdf(classes)}</>
+        <><InsertS />{asdf(classes)}</> //<InsertS> => スタイルそのもの
         /*
 <>
 
