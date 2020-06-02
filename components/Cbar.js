@@ -5,7 +5,7 @@ import { Grid, Button } from '@material-ui/core';
 import Link from 'next/link';
 import InsertS from "../styles/chatStyle.js";
 
-
+//ボタン用のスタイル
 const useStyles = makeStyles(theme => ({
     butCh: {
         border: "none",
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-
+/* 現在のチャンネルをチェックするようだったやつ
 function checkLoc(Clink) {
     if ( location.search.indexOf(Clink) != -1 ) {
         return "outlined";
@@ -33,11 +33,12 @@ function checkLoc(Clink) {
     }
     console.log("checked with " + Clink);
 
-}
+}*/
 
 
 function asdf(cl) {
     var list = [];
+    console.log(cl.butch);
 
     var chList= [
         "general",
@@ -50,7 +51,7 @@ function asdf(cl) {
         list.push(
             <li key={index}>
             <Grid item style={{width: "100%"}}>
-            <Link href="/"><button className={cl.butCh}>
+            <Link href={"?="+value}><button className={cl.butCh}>
             {value}
             </button></Link>
             </Grid>

@@ -10,6 +10,11 @@ const layoutStyle = {
 
 }
 
+//チャンネルのヘッダー
+const chatHead = {
+    fontSize: "32px",
+    height: "10%",
+}
 
 //メッセージを放り込む部分
 const chatWL = {
@@ -33,6 +38,9 @@ export default function chatWin() {
     //const classes = useStyles();
     return (
         <>
+        <div style={chatHead}>
+            this is header
+        </div>
         <div style={chatWL}>
             <p>asdf</p>
         </div>
