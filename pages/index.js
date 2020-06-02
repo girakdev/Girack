@@ -4,8 +4,8 @@ import Cbar from '../components/Cbar.js';
 import Chatw from "../components/chatW.js";
 import InsertS from "../styles/style.js";
 import { makeStyles } from '@material-ui/core/styles';
-//import { TextField, Container, Grid } from '@material-ui/core';
 import io from 'socket.io-client';
+import CbarALT from "../components/CbarALT.js";
 
 export default function Blog() {
   //通信するためのSocket
@@ -21,9 +21,7 @@ export default function Blog() {
   return (
 <>
     <InsertS />
-    <div className="forBar">
-        <Cbar></Cbar>
-    </div>
+        <CbarALT className="forBar" />
     <div className="forWin">
         <Chatw />
     </div>

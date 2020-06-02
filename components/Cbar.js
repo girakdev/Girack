@@ -27,7 +27,7 @@ function asdf(cl) {
     var list = [];
     console.log(cl.butch);
 
-    //ここはサーバー受け取り予定
+    //ここはサーバーから受け取る予定
     var chList= [
         "general",
         "random",
