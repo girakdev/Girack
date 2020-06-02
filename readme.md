@@ -17,3 +17,10 @@ npm install
 ```
 node server.js
 ```
+
+## 使用したライブラリ、フレームワーク
+SocketIO
+React
+NextJS
+NodeJS
+MaterialUI
