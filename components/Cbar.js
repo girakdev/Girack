@@ -13,9 +13,8 @@ const BsButton = withStyles({
       paddingTop: '3px',
       paddingBottom: '3px',
       marginLeft: 0,
-      border: '1px solid rgba(0,0,0,0)',
-      BorderRadiusTopright: "10ch",
-      BorderRadiusBottomRight: "10ch",
+      border: '4px solid rgba(0,0,0,0)',
+      borderRadius: "0 10ch 10ch 0",
       lineHeight: 0.2,
       width: "90%",
       fontFamily: [
@@ -31,9 +30,8 @@ const BsButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#e6f7ff',
-        borderColor: '#e6f7ff',
-        boxShadow: 'none',
+        backgroundColor: '#33bbff',
+        boxShadow: '2',
       },
       '&:active': {
         boxShadow: 'none',
@@ -46,66 +44,35 @@ const BsButton = withStyles({
     },
   })(Button);
 
-const useStyles = makeStyles((theme) => ({
-    margin: {
-        margin: theme.spacing(1),
-
-    },
-
-}));
-
 //チャンネルリストを出力する
-const drawer = (
+const draw = (
     <>
     {/*この↓のチャンネルの部分はサーバーより受け取る*/}
     {["general", "random", "devs", "MI"].map((text, index) => (
         <Grid item style={{width:"100%", margin:0}} key={text}>
             <Link href={"?=" + text}>
-            <BsButton>
-                <p>{text}</p>
-            </BsButton>
+                <BsButton>
+                    <p>{text}</p>
+                </BsButton>
             </Link>
         </Grid>
     ))}
     </>
-);
+)
 
 
 export default function chatWin() {
-    const classes = useStyles();
     return (
 <>
 <Grid 
  container direction="column"
  justify="flex-start"
  alignItems="flex-start">
-{drawer}
+     {draw}
 </Grid>
 
 </> 
         //<InsertS> => スタイルそのもの
-        /*
-<>
 
-<Grid
-    
-    container
-    direction="column"
-    justify="center"
-    alignItems="flex-start"
-    spacing={1}
->
-    <Grid item style={{width: "100%"}}>
-        <Link href="/"><button className={classes.butCh}>general</button></Link>
-    </Grid>
-    <Grid item style={{width: "100%"}}>
-        <Link href="/?=random"><button className={classes.butCh}>random</button></Link>
-    </Grid>
-    <Grid item>
-        <button className={classes.butCh}>devs</button>
-    </Grid>
-
-</Grid>
-</>*/
     )
 }

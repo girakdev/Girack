@@ -29,7 +29,7 @@ body
 .forBar {
     height: 100%;
     width: 20%;
-    maxWidth : 200px;
+    maxWidth: 200px;
     position: absolute;
     left: 0;
     top: 0;
