@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Button } from '@material-ui/core';
 import Link from 'next/link';
 import InsertS from "../styles/chatStyle.js";
 
@@ -21,6 +21,20 @@ const useStyles = makeStyles(theme => ({
         }  
     },
   }));
+
+const drawer = (
+    <>
+    {["general", "random", "devs", "MI"].map((text, index) => (
+        <Grid item>
+            <Link href={"?="+{text}}>
+            <Button key={text}>
+                <p>{text}</p>
+            </Button>
+            </Link>
+        </Grid>
+    ))}
+    </>
+);
 
 function asdf(cl) {
     //ループした要素を取り込む配列の用意
@@ -60,7 +74,14 @@ function asdf(cl) {
 export default function chatWin() {
     const classes = useStyles();
     return (
-        <><InsertS />{asdf(classes)}</> //<InsertS> => スタイルそのもの
+<>
+<Grid container direction="column" justify="flex-start" alignItems="flex-start">
+
+{drawer}
+</Grid>
+
+</> 
+        //<InsertS> => スタイルそのもの
         /*
 <>
 

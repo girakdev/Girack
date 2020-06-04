@@ -12,6 +12,7 @@ const nextHandler = nextApp.getRequestHandler();
 let port = 3000;
 
 io.on("connect", socket => {
+    console.log("--- USER CONNECTED ---");
     socket.emit("now", {
         message: "zeit"
 

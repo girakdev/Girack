@@ -21,7 +21,7 @@ export default function Blog() {
   return (
 <>
     <InsertS />
-        <CbarALT className="forBar" />
+        <Cbar className="forBar" />
     <div className="forWin">
         <Chatw />
     </div>

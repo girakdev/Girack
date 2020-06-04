@@ -62,10 +62,22 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <div className={classes.root}>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+    <>
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
+        {/* ここにコメント一番下の要素が入る*/}
+        <Drawer
+            variant="permanent"
+            open
+          >
+            {drawer}
+          </Drawer>
+    </>
+  );
+}
+
+export default ResponsiveDrawer;
+/* もともとHiddenのすぐ上にあった要素
+<Hidden implementation="css">
           <Drawer
             container={container}
             variant="temporary"
@@ -81,20 +93,4 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
-        <Drawer
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
-    </div>
-  );
-}
-
-export default ResponsiveDrawer;
+*/
