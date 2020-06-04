@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
 import Link from 'next/link';
 
 //ボタン用のスタイル
-const BootstrapButton = withStyles({
+const BsButton = withStyles({
     root: {
       boxShadow: 'none',
       textTransform: 'none',
-      fontSize: 16,
-      padding: '6px',
+      fontSize: 18,
+      paddingTop: '3px',
+      paddingBottom: '3px',
+      marginLeft: 0,
       border: '1px solid rgba(0,0,0,0)',
-      lineHeight: 0.6,
-      width: "100%",
+      BorderRadiusTopright: "10ch",
+      BorderRadiusBottomRight: "10ch",
+      lineHeight: 0.2,
+      width: "90%",
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -27,8 +31,8 @@ const BootstrapButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#e6ccff',
-        borderColor: '#f7e6ff',
+        backgroundColor: '#e6f7ff',
+        borderColor: '#e6f7ff',
         boxShadow: 'none',
       },
       '&:active': {
@@ -55,11 +59,11 @@ const drawer = (
     <>
     {/*この↓のチャンネルの部分はサーバーより受け取る*/}
     {["general", "random", "devs", "MI"].map((text, index) => (
-        <Grid item>
-            <Link href={"?="+{text}}>
-            <BootstrapButton varient="contained" key={text}>
+        <Grid item style={{width:"100%", margin:0}} key={text}>
+            <Link href={"?=" + text}>
+            <BsButton>
                 <p>{text}</p>
-            </BootstrapButton>
+            </BsButton>
             </Link>
         </Grid>
     ))}
@@ -71,8 +75,10 @@ export default function chatWin() {
     const classes = useStyles();
     return (
 <>
-<Grid container direction="column" justify="flex-start" alignItems="flex-start">
-
+<Grid 
+ container direction="column"
+ justify="flex-start"
+ alignItems="flex-start">
 {drawer}
 </Grid>
 

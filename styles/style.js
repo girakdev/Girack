@@ -33,13 +33,7 @@ body
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #DDD;
-}
-
-.btStyle
-{
-    width: 100%;
-    border: solid #DDD 2pc;
+    background-color: #EFEFEF;
 }
 
 `}</style>

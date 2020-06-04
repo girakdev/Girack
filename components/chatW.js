@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Container, Button, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const layoutStyle = {
     border: '1px solid #DDD',
