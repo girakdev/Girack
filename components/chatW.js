@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Divider } from '@material-ui/core';
 
 const layoutStyle = {
     border: '1px solid #DDD',
@@ -22,7 +22,6 @@ const chatWL = {
     width: "100%",
     height: "70%",
     position: "relative",
-    border: "solid 3px red"
 
 }
 
@@ -43,6 +42,7 @@ export default function chatWin() {
                 <p>これがチャンネルヘッダ</p>
                 <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)" }}>これが説明</Typography>
             </div>
+            <Divider />
             <div style={chatWL}>
                 <p>asdf</p>
             </div>

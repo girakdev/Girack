@@ -13,7 +13,7 @@ const forBar =  {
     position: "absolute",
     left: 0,
     top: 0,
-    backgroundColor: "#DDD",
+    backgroundColor: "#faeee7",
 
 }
 

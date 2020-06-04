@@ -33,7 +33,7 @@ body
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #EFEFEF;
+    background-color: #faeee7;
 }
 
 `}</style>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Divider } from '@material-ui/core';
 import Link from 'next/link';
 
 //ボタン用のスタイル
@@ -10,11 +10,13 @@ const BsButton = withStyles({
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 18,
+      textAlign: "left",
+      paddingLeft: "5px",
       paddingTop: '3px',
       paddingBottom: '3px',
       marginLeft: 0,
-      border: '4px solid rgba(0,0,0,0)',
-      borderRadius: "0 10ch 10ch 0",
+      border: '1px solid rgba(0,0,0,0)',
+      borderRadius: "0 2ch 2ch 0",
       lineHeight: 0.2,
       width: "90%",
       fontFamily: [
@@ -30,13 +32,13 @@ const BsButton = withStyles({
         '"Segoe UI Symbol"',
       ].join(','),
       '&:hover': {
-        backgroundColor: '#33bbff',
+        backgroundColor: '#4cd3c2',
         boxShadow: '2',
       },
       '&:active': {
         boxShadow: 'none',
-        backgroundColor: '#0062cc',
-        borderColor: '#005cbf',
+        backgroundColor: '#4cd3c2',
+        borderColor: '#0a97b0',
       },
       '&:focus': {
         boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
@@ -63,7 +65,16 @@ const draw = (
 
 export default function chatWin() {
     return (
+
 <>
+<div style={{margin:"10%"}} id="profile">
+    <span>
+        <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
+        
+    </span>
+    
+</div>
+<Divider />
 <Grid 
  container direction="column"
  justify="flex-start"
@@ -72,7 +83,6 @@ export default function chatWin() {
 </Grid>
 
 </> 
-        //<InsertS> => スタイルそのもの
 
     )
 }
