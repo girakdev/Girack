@@ -1,75 +1,71 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
 import Link from 'next/link';
-import InsertS from "../styles/chatStyle.js";
 
-//ボタン用のスタイル（ループで死んでますが）
-const useStyles = makeStyles(theme => ({
-    butCh: {
-        border: "none",
-        backgroundColor: "rgba(0, 0, 0, 0.0)",
-        width: "100%",
-        margin: 0,
-        padding: "3px",
-        paddingLeft: "1ch",
-        textAlign: "left",
-        fontSize: "18px",
-        '&:hover': {
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
-        }  
+//ボタン用のスタイル
+const BootstrapButton = withStyles({
+    root: {
+      boxShadow: 'none',
+      textTransform: 'none',
+      fontSize: 16,
+      padding: '6px',
+      border: '1px solid rgba(0,0,0,0)',
+      lineHeight: 0.6,
+      width: "100%",
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        backgroundColor: '#e6ccff',
+        borderColor: '#f7e6ff',
+        boxShadow: 'none',
+      },
+      '&:active': {
+        boxShadow: 'none',
+        backgroundColor: '#0062cc',
+        borderColor: '#005cbf',
+      },
+      '&:focus': {
+        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+      },
     },
-  }));
+  })(Button);
 
+const useStyles = makeStyles((theme) => ({
+    margin: {
+        margin: theme.spacing(1),
+
+    },
+
+}));
+
+//チャンネルリストを出力する
 const drawer = (
     <>
+    {/*この↓のチャンネルの部分はサーバーより受け取る*/}
     {["general", "random", "devs", "MI"].map((text, index) => (
         <Grid item>
             <Link href={"?="+{text}}>
-            <Button key={text}>
+            <BootstrapButton varient="contained" key={text}>
                 <p>{text}</p>
-            </Button>
+            </BootstrapButton>
             </Link>
         </Grid>
     ))}
     </>
 );
 
-function asdf(cl) {
-    //ループした要素を取り込む配列の用意
-    var list = [];
-    console.log(cl.butch);
-
-    //ここはサーバーから受け取る予定
-    var chList= [
-        "general",
-        "random",
-        "devs",
-    ];
-
-    //ループ追加開始
-    for ( const [index, value] of chList.entries() ) {
-        //list.push(<p>{chList[i]}</p>);
-        list.push(
-            <li key={index}>
-            <Grid item style={{width: "100%"}}>
-            <Link href={"?="+value}><button className={cl.butCh}>
-            {value}
-            </button></Link>
-            </Grid>
-            </li>
-        )
-
-    }
-
-    //出力
-    return (
-        <span>
-            {list}
-        </span>
-    )
-}
 
 export default function chatWin() {
     const classes = useStyles();

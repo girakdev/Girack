@@ -12,8 +12,9 @@ const layoutStyle = {
 
 //チャンネルのヘッダー
 const chatHead = {
-    fontSize: "32px",
+    fontSize: "20px",
     height: "10%",
+    paddingLeft: "1%"
 }
 
 //メッセージを放り込む部分
@@ -39,7 +40,7 @@ export default function chatWin() {
     return (
         <>
             <div style={chatHead}>
-                <h6>これがチャンネルヘッダ</h6>
+                <p>これがチャンネルヘッダ</p>
                 <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)" }}>これが説明</Typography>
             </div>
             <div style={chatWL}>
