@@ -22,7 +22,7 @@ const chatWL = {
     width: "100%",
     height: "70%",
     position: "relative",
-
+    paddingLeft: "2%",
 }
 
 const useStyles = createStyles({

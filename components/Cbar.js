@@ -78,7 +78,9 @@ export default function chatWin() {
 <Grid 
  container direction="column"
  justify="flex-start"
- alignItems="flex-start">
+ alignItems="flex-start"
+ style={{marginTop:"10%"}}
+ >
      {draw}
 </Grid>
 
