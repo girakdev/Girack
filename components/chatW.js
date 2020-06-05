@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Divider, TextField, Paper, Button } from '@material-ui/core';
 import io from 'socket.io-client';
+import Header from './Header';
 
 const layoutStyle = {
     border: '1px solid #DDD',
@@ -20,10 +21,11 @@ const chatHead = {
 
 //メッセージを放り込む部分
 const chatWL = {
-    width: "100%",
+    width: "95%",
     height: "75%",
     position: "relative",
     paddingLeft: "2%",
+    overflow: "auto",
 }
 
 const useStyles = createStyles({
@@ -54,15 +56,13 @@ const chatPaperStyle = {
 //チャットの送信
 function chatSend(s) {
     var msg = document.getElementById("outlined-basic msgBox")._valueTracker.getValue();
-    console.log(msg);
     s.emit("msgS", msg);
 
 }
 
-var msgListShown = "";
 
 //受信したメッセージの格納場所（現在は試験用にダミーを追加）
-var msgList = ["===This is start of BODY===","and second"];
+var msgList = [];
 function msgLists() {
     return (
     <>
@@ -83,29 +83,40 @@ function msgMaker(m) {
 export default function chatWin() {
     //const classes = useStyles();
     const socket = io();
+
+    //テスト受信用
     socket.on("now", data => {
         console.log(data.message);
 
     });
-    socket.on("msgR", data => {
-        //document.getElementById("chatW").children[0].innerHTML+=(<div key={data.message} style={chatPaperStyle}>{data.message}}</div>);
-        //console.log(<div key={data.message} style={chatPaperStyle}>{data.message}}</div>);
-        msgList += data.message;
-        //msgLists();
-        var magCont = document.getElementById("chatW").children[0]
-        magCont.appendChild(msgMaker(data.message));
 
+    //メッセージの受信用
+    socket.on("msgR", data => {
+        msgList += data.message;
+
+        var magCont = document.getElementById("chatW");
+        magCont.innerHTML+=('<div style="width:90%;padding:20px;padding-top:5px;padding-bottom:5px;border:solid 1px;border-color:rgba(0,0,0,0.13);border-radius:3px;margin-top:2%">'+data.message+'</div>');
+        /*
+        var element = document.getElementById("chatW");
+        var positionY = element.offsetTop; // 変更点
+        element.scrollTo(0, positionY);
+        */
+
+        var element = document.getElementById('chatW'); // 移動させたい位置の要素を取得
+        var rect = element.getBoundingClientRect();
+        var position = rect.top;    // 一番上からの位置を取得
+        element.scrollTo(0, position);
     });
 
     return (
         <>
             <div style={chatHead}>
-                <p style={{margin:0}}>これがチャンネルヘッダ</p>
+                <p style={{margin:0}}>{location.search.split("=")[1]}</p>
                 <Typography variant="overline" style={{ color:"rgba(0, 0, 0, 0.6)",marginTop:"2px" }}>これが説明</Typography>
             </div>
             <Divider />
-            <div id="chatW" style={chatWL}>
-                <span style={{margin:"2%", width:"95%"}}>
+            <div style={chatWL}>
+                <span id="chatW" style={{margin:"2%", width:"100%"}}>
                     <Paper style={chatPaperStyle} variant="outlined">asdf</Paper>
                     {msgLists()}
                 </span>
