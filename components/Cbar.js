@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Grid, Button, Divider } from '@material-ui/core';
 import Link from 'next/link';
@@ -9,11 +8,11 @@ const BsButton = withStyles({
     root: {
       boxShadow: 'none',
       textTransform: 'none',
-      fontSize: 18,
+      fontSize: 15,
       textAlign: "left",
       paddingLeft: "5px",
-      paddingTop: '3px',
-      paddingBottom: '3px',
+      paddingTop: '2px',
+      paddingBottom: '2px',
       marginLeft: 0,
       border: '1px solid rgba(0,0,0,0)',
       borderRadius: "0 2ch 2ch 0",
@@ -71,7 +70,6 @@ export default function chatWin() {
         <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
         
     </span>
-    
 </div>
 <Divider />
 <Grid 

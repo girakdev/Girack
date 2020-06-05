@@ -75,11 +75,6 @@ export default function chatWin() {
 
     });
     
-    /*
-    socket.on("msgR", function (msg) {
-        
-    })
-    */
     return (
         <>
             <div style={chatHead}>
@@ -98,5 +93,6 @@ export default function chatWin() {
                 <Button onClick={()=>{chatSend(socket)}} variant="outlined">送信</Button>
             </div>
         </>
-    )
+    );
 }
+
