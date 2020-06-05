@@ -43,6 +43,12 @@ const chatInputStyle = {
 const chatPaperStyle = {
     width: "90%",
     padding: "20px",
+    paddingTop: "5px",
+    paddingBottom: "5px",
+    border: "solid 1px",
+    borderColor: "rgba(0,0,0,0.13)",
+    borderRadius: "3px",
+    marginTop: "2%",
 }
 
 //チャットの送信
@@ -53,13 +59,25 @@ function chatSend(s) {
 
 }
 
-function msgPaper(m) {
-    console.log(m);
+var msgListShown = "";
+
+//受信したメッセージの格納場所（現在は試験用にダミーを追加）
+var msgList = ["===This is start of BODY===","and second"];
+function msgLists() {
     return (
-        <Paper key={m} style={chatPaperStyle} variant="outlined">{m}}</Paper>
+    <>
+    {/*この↓のチャンネルの部分はサーバーより受け取る*/}
+    {["msgList","uh"].map((text, index) => (
+        <div key={text} style={chatPaperStyle}>{text}</div>
+    ))}
+    </>);
+    //return msgListShown;
 
-    )
+}
 
+function msgMaker(m) {
+    return (<div key={m} style={chatPaperStyle}>{m}</div>);
+    //console.log(<><div key={m} style={chatPaperStyle}>{m}</div></>);
 }
 
 export default function chatWin() {
@@ -70,11 +88,15 @@ export default function chatWin() {
 
     });
     socket.on("msgR", data => {
-        document.getElementById("chatW").children[0].innerHTML+=(msgPaper(data.message));
-        console.log(msgPaper(data.message));
+        //document.getElementById("chatW").children[0].innerHTML+=(<div key={data.message} style={chatPaperStyle}>{data.message}}</div>);
+        //console.log(<div key={data.message} style={chatPaperStyle}>{data.message}}</div>);
+        msgList += data.message;
+        //msgLists();
+        var magCont = document.getElementById("chatW").children[0]
+        magCont.appendChild(msgMaker(data.message));
 
     });
-    
+
     return (
         <>
             <div style={chatHead}>
@@ -85,6 +107,7 @@ export default function chatWin() {
             <div id="chatW" style={chatWL}>
                 <span style={{margin:"2%", width:"95%"}}>
                     <Paper style={chatPaperStyle} variant="outlined">asdf</Paper>
+                    {msgLists()}
                 </span>
             </div>
             <Divider />

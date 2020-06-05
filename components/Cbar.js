@@ -66,7 +66,7 @@ export default function chatWin() {
 
 <>
 <div style={{margin:"10%"}} id="profile">
-    <span>
+    <span>{/*このイメージはサンプルです*/}
         <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
         
     </span>
