@@ -45,12 +45,22 @@ const chatPaperStyle = {
     padding: "20px",
 }
 
-function chatSend() {
-    //var msg = document.getElementById("msgBox");
-    io.emit("test", "asdf");
+//チャットの送信
+function chatSend(s) {
+    var msg = document.getElementById("outlined-basic msgBox")._valueTracker.getValue();
+    console.log(msg);
+    s.emit("msgS", msg);
 
 }
 
+function msgPaper(m) {
+    console.log(m);
+    return (
+        <Paper key={m} style={chatPaperStyle} variant="outlined">{m}}</Paper>
+
+    )
+
+}
 
 export default function chatWin() {
     //const classes = useStyles();
@@ -59,7 +69,17 @@ export default function chatWin() {
         console.log(data.message);
 
     });
+    socket.on("msgR", data => {
+        document.getElementById("chatW").children[0].innerHTML+=(msgPaper(data.message));
+        console.log(msgPaper(data.message));
 
+    });
+    
+    /*
+    socket.on("msgR", function (msg) {
+        
+    })
+    */
     return (
         <>
             <div style={chatHead}>
@@ -75,7 +95,7 @@ export default function chatWin() {
             <Divider />
             <div style={chatInputStyle}>
                 <span style={{float:"left", marginRight:"3%", width:"85%"}}><TextField style={{width:"100%",float:"left"}} id="outlined-basic msgBox" label="メッセージ" variant="outlined" /></span>
-                <Button onClick={chatSend()} variant="outlined">送信</Button>
+                <Button onClick={()=>{chatSend(socket)}} variant="outlined">送信</Button>
             </div>
         </>
     )

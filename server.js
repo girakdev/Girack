@@ -10,7 +10,7 @@ const nextHandler = nextApp.getRequestHandler()
 let port = 3000;
 
 //一時的なメッセージのDB
-const messages = []
+const messages = ["Oh yeah"];
 
 io.on("connect", socket => {
     console.log("--- USER CONNECTED ---");
@@ -24,20 +24,32 @@ io.on("connect", socket => {
 
     });
 
+    
+    socket.on("msgS", function (msg) {　//サーバーがクライアントからメッセージを受け取る
+        socket.emit("msgR", { //サーバーからクライアントに送信
+            message: msg
+
+        });
+
+    });
+
 });
 
 
 nextApp.prepare().then(() => {
     app.get('/messages', (req, res) => {
       res.json(messages)
+
     })
   
     app.get('*', (req, res) => {
       return nextHandler(req, res)
+
     })
   
     server.listen(3000, (err) => {
       if (err) throw err
       console.log('> Ready on http://localhost:3000')
+
     })
   })
