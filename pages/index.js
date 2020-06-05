@@ -14,7 +14,7 @@ const forBar =  {
     left: 0,
     top: 0,
     backgroundColor: "#faeee7",
-
+    borderRight: "solid 1px #000",
 }
 
 
@@ -24,21 +24,14 @@ const forWindow = {
   position: "absolute",
   right: 0,
   top: 0,
-  borderLeft: "solid 4px #000",
   padding: 0,
   margin: 0
 }
 
 export default function Blog() {
   //通信するためのSocket
-  const socket = io();
+  //const socket = io();
   console.log("<<< page loaded >>>");
-
-  //初期メッセージ
-    socket.on("now", data => {
-        console.log(data.message);
-
-    });
 
   return (
 <>

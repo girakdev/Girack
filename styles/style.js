@@ -12,16 +12,16 @@ export default function insertStyle() {
 body
 {
     font-family: 'Noto Sans JP', sans-serif;
+    overflow: neno;
 }
 
 .forWin 
 {
     height: 100%;
-    width: 80%;
-    position: absolute;
-    right: 0;
+    width: 75%;
+    position: relative;
+    right: 10;
     top: 0;
-    border-left: solid 4px #000;
     padding: 0;
     margin: 0;
 }

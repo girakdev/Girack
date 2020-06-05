@@ -62,7 +62,6 @@ const draw = (
     </>
 )
 
-
 export default function chatWin() {
     return (
 
@@ -80,7 +79,7 @@ export default function chatWin() {
  justify="flex-start"
  alignItems="flex-start"
  style={{marginTop:"10%"}}
- >
+>
      {draw}
 </Grid>
 
