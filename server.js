@@ -30,6 +30,7 @@ io.on("connect", socket => {
             message: msg
 
         });
+        console.log("received :" + msg);
 
     });
 

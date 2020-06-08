@@ -92,9 +92,12 @@ export default function chatWin() {
 
     //メッセージの受信用
     socket.on("msgR", data => {
+        //メッセージの配列に追加
         msgList += data.message;
 
+        //メッセージを出力するためにchatWのウィンドウを取得
         var magCont = document.getElementById("chatW");
+        //出力
         magCont.innerHTML+=('<div style="width:90%;padding:20px;padding-top:5px;padding-bottom:5px;border:solid 1px;border-color:rgba(0,0,0,0.13);border-radius:3px;margin-top:2%">'+data.message+'</div>');
         /*
         var element = document.getElementById("chatW");
@@ -103,9 +106,10 @@ export default function chatWin() {
         */
 
         var element = document.getElementById('chatW'); // 移動させたい位置の要素を取得
-        var rect = element.getBoundingClientRect();
+        var rect = element.getBoundingClientRect(); //スクロールするために要素の情報を取得
         var position = rect.top;    // 一番上からの位置を取得
-        element.scrollTo(0, position);
+        element.scrollTo(0, position); //一番下にスクロールする（できないけどな！）
+
     });
 
     return (

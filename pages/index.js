@@ -6,6 +6,8 @@ import InsertS from "../styles/style.js";
 import { makeStyles } from '@material-ui/core/styles';
 import io from 'socket.io-client';
 
+
+//チャンネルバーのスタイル
 const forBar =  {
     height: "100%",
     width: "20%",
@@ -17,7 +19,7 @@ const forBar =  {
     borderRight: "solid 1px #000",
 }
 
-
+//チャンネルウィンドウのスタイル（右）
 const forWindow = {
   height: "100%",
   width: "80%",
