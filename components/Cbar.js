@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Grid, Button, Divider } from '@material-ui/core';
+import { Grid, Button, Divider, NoSsr } from '@material-ui/core';
 import Link from 'next/link';
 
 //ボタン用のスタイル
@@ -73,14 +73,16 @@ export default function chatWin() {
     </span>
 </div>
 <Divider />
-<Grid 
- container direction="column"
- justify="flex-start"
- alignItems="flex-start"
- style={{marginTop:"10%"}}
->
-     {draw}{/*チャンネルリストを出力する場所 */}
-</Grid>
+<NoSsr>
+  <Grid 
+  container direction="column"
+  justify="flex-start"
+  alignItems="flex-start"
+  style={{marginTop:"10%"}}
+  >
+      {draw}{/*チャンネルリストを出力する場所 */}
+  </Grid>
+</NoSsr>
 
 </> 
 
