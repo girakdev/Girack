@@ -61,19 +61,31 @@ const draw = (
     </>
 )
 
+const SettingButton = withStyles((theme) => ({
+  root: {
+    width: "100%",
+    '&hover': {
+      backgroundColor: 'blue',
+
+    },
+
+  }
+
+}))(Button);
+
 export default function chatWin() {
     return (
 
 <>
-<div style={{margin:"10%"}} id="profile">
-    <span>{/*このイメージはサンプルです*/}
-        <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
-        <Button disableRipple>NAME</Button>
-        <Button style={{ width:"100%" }} variant="contained" disableElevation>SETTING</Button>
-    </span>
-</div>
-<Divider />
 <NoSsr>
+  <div style={{margin:"10%"}} id="profile">
+      <span>{/*このイメージはサンプルです*/}
+          <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
+          <Button disableRipple>NAME</Button>
+          <SettingButton variant="outlined" color="secondary" disableElevation>SETTING</SettingButton>
+      </span>
+  </div>
+  <Divider />
   <Grid 
   container direction="column"
   justify="flex-start"
