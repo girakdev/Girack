@@ -4,6 +4,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Divider, TextField, Paper, Button } from '@material-ui/core';
 import io from 'socket.io-client';
 import Header from './Header';
+//import Alrt from '../components/alert.js';
 
 const layoutStyle = {
     border: '1px solid #DDD',
@@ -16,7 +17,8 @@ const layoutStyle = {
 const chatHead = {
     fontSize: "20px",
     height: "10%",
-    paddingLeft: "1%"
+    paddingLeft: "1%",
+    marginTop: "2%",
 }
 
 //メッセージを放り込む部分
@@ -128,7 +130,7 @@ export default function chatWin() {
             <Divider />
             <div style={chatInputStyle}>
                 <span style={{float:"left", marginRight:"3%", width:"85%"}}><TextField style={{width:"100%",float:"left"}} id="outlined-basic msgBox" label="メッセージ" variant="outlined" /></span>
-                <Button onClick={()=>{chatSend(socket)}} variant="outlined">送信</Button>
+                <Button style={{height: '100%'}} onClick={()=>{chatSend(socket)}} variant="outlined">送信</Button>
             </div>
         </>
     );

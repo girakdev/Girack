@@ -78,10 +78,12 @@ export default function chatWin() {
 
 <>
 <NoSsr>
-  <div style={{margin:"10%"}} id="profile">
+  <div style={{margin:"5% 10% 10% 10%"}} id="profile">
       <span>{/*このイメージはサンプルです*/}
           <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
-          <Button disableRipple>NAME</Button>
+          <div style={{ marginTop:0, float:"right", width:"75%", textAlign:"center"}}>
+            <p>user</p>
+          </div>
           <SettingButton variant="outlined" color="secondary" disableElevation>SETTING</SettingButton>
       </span>
   </div>
@@ -92,7 +94,7 @@ export default function chatWin() {
   alignItems="flex-start"
   style={{marginTop:"10%"}}
   >
-      {draw}{/*チャンネルリストを出力する場所 */}
+    {draw}{/*チャンネルリストを出力する場所 */}
   </Grid>
 </NoSsr>
 
