@@ -64,8 +64,13 @@ const draw = (
 const SettingButton = withStyles((theme) => ({
   root: {
     width: "100%",
-    '&hover': {
-      backgroundColor: 'blue',
+    margin: "3%, 0, 0, 0",
+    backgroundColor: null,
+    height: "3ch",
+
+    '&:hover': {
+      backgroundColor: 'rgba(76, 211, 194, 0.1)',
+      borderColor: "#4cd3c2",
 
     },
 
@@ -77,14 +82,14 @@ export default function chatWin() {
     return (
 
 <>
-<NoSsr>
+<NoSsr> {/* サーバーサイドレンダリングを殺しています */}
   <div style={{margin:"5% 10% 10% 10%"}} id="profile">
       <span>{/*このイメージはサンプルです*/}
           <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
           <div style={{ marginTop:0, float:"right", width:"75%", textAlign:"center"}}>
-            <p>user</p>
+            <Button>user</Button>
           </div>
-          <SettingButton variant="outlined" color="secondary" disableElevation>SETTING</SettingButton>
+          <SettingButton variant="outlined" disableElevation>SETTING</SettingButton>
       </span>
   </div>
   <Divider />
