@@ -69,7 +69,7 @@ const SettingButton = withStyles((theme) => ({
     height: "3ch",
 
     '&:hover': {
-      backgroundColor: 'rgba(76, 211, 194, 0.1)',
+      backgroundColor: 'rgba(76, 211, 194, 0.4)',
       borderColor: "#4cd3c2",
 
     },
