@@ -69,7 +69,7 @@ export default function chatWin() {
     <span>{/*このイメージはサンプルです*/}
         <img style={{width:"25%",height:"auto"}} src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></img>
         <Button disableRipple>NAME</Button>
-        <Button variant="contained">SETTING</Button>
+        <Button style={{ width:"100%" }} variant="contained" disableElevation>SETTING</Button>
     </span>
 </div>
 <Divider />
