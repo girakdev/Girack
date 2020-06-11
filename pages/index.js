@@ -1,4 +1,5 @@
 // pages/index.js
+
 import Layout from '../components/MyLayout.js';
 import Cbar from '../components/Cbar.js';
 import Chatw from "../components/chatW.js";
