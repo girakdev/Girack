@@ -51,7 +51,7 @@ const draw = (
     {/*この↓のチャンネルの部分はサーバーより受け取る*/}
     {["general", "random", "devs", "MI"].map((text, index) => (
         <Grid item style={{width:"100%", margin:0}} key={text}>
-            <Link href={"?=" + text}>
+            <Link href="/[id]" as={"/"+text}>
                 <BsButton>
                     <p>{text}</p>
                 </BsButton>

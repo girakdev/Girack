@@ -117,7 +117,7 @@ export default function chatWin() {
     return (
         <>
             <div style={chatHead}>
-                <p style={{margin:0}}>ここがチャンネルヘッダ</p>
+                <p style={{margin:0}}>{location.pathname.split("/")[1]}</p>
                 <Typography variant="overline" style={{ color:"rgba(0, 0, 0, 0.6)",marginTop:"2px" }}>これが説明</Typography>
             </div>
             <Divider />
