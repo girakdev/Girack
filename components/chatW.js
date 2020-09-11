@@ -117,7 +117,7 @@ export default function chatWin() {
     return (
         <>
             <div style={chatHead}>
-                <p style={{margin:0}}>{location.pathname.split("/")[1]}</p>
+                <title style={{margin:0}}>{/*{location.pathname.split("/")[1]}*/}</title>
                 <Typography variant="overline" style={{ color:"rgba(0, 0, 0, 0.6)",marginTop:"2px" }}>これが説明</Typography>
             </div>
             <Divider />
