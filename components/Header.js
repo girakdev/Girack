@@ -8,7 +8,7 @@ const linkStyle = {
   marginRight: 15
 }
 
-export default function Header() {
+const Header = () => {
   return (
     <>
       <Link href="/"><Button color="Primary"> Home</Button></Link>
@@ -17,3 +17,4 @@ export default function Header() {
     </>
   )
 }
+export default Header;

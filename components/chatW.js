@@ -56,7 +56,7 @@ const chatPaperStyle = {
 }
 
 //チャットの送信
-function chatSend(s) {
+const chatSend = (s) => {
     var msg = document.getElementById("outlined-basic msgBox")._valueTracker.getValue();
     s.emit("msgS", msg);
 
@@ -65,7 +65,7 @@ function chatSend(s) {
 
 //受信したメッセージの格納場所（現在は試験用にダミーを追加）
 var msgList = [];
-function msgLists() {
+const msgLists = () => {
     return (
         <>
             {/*この↓のチャンネルの部分はサーバーより受け取る*/}
@@ -77,12 +77,12 @@ function msgLists() {
 
 }
 
-function msgMaker(m) {
+const msgMaker = (m) => {
     return (<div key={m} style={chatPaperStyle}>{m}</div>);
     //console.log(<><div key={m} style={chatPaperStyle}>{m}</div></>);
 }
 
-export default function chatWin() {
+const chatWin = () => {
     //const classes = useStyles();
     const socket = io();
 
@@ -136,3 +136,4 @@ export default function chatWin() {
     );
 }
 
+export default chatWin;

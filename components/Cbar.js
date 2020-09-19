@@ -78,9 +78,8 @@ const SettingButton = withStyles((theme) => ({
 
 }))(Button);
 
-export default function chatWin() {
+const chatWin = () => {
     return (
-
         <>
             <NoSsr> {/* サーバーサイドレンダリングを殺しています */}
                 <div style={{ margin: "5% 10% 10% 10%" }} id="profile">
@@ -105,5 +104,7 @@ export default function chatWin() {
 
         </>
 
-    )
+    );
 }
+
+export default chatWin;

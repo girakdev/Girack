@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import io from 'socket.io-client';
 import Header from './Header';
 
-export default function Popalert(props) {
+const Popalert = (props) => {
     console.log("alert pop up");
     return (
         <>
@@ -18,3 +18,5 @@ export default function Popalert(props) {
         </>
     );
 }
+
+export default Popalert;

@@ -9,10 +9,12 @@ const layoutStyle = {
   borderRadius: "4px"
 }
 
-export default function Layout(props) {
+const Layout = (props) => {
   return (
     <div style={layoutStyle}>
       {props.children}
     </div>
   )
 }
+
+export default Layout;
