@@ -10,10 +10,10 @@ const linkStyle = {
 
 export default function Header() {
   return (
-      <>
+    <>
       <Link href="/"><Button color="Primary"> Home</Button></Link>
       <Link href="/articles"><Button color="secondary">Articles</Button></Link>
       <Link href="/info"><Button color="Info">Info</Button></Link>
-      </>
+    </>
   )
 }

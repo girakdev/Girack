@@ -9,10 +9,10 @@ import io from 'socket.io-client';
 
 
 //チャンネルバーのスタイル
-const forBar =  {
+const forBar = {
     height: "100%",
     width: "20%",
-    maxWidth : "200px",
+    maxWidth: "200px",
     position: "absolute",
     left: 0,
     top: 0,
@@ -22,30 +22,30 @@ const forBar =  {
 
 //チャンネルウィンドウのスタイル（右）
 const forWindow = {
-  height: "100%",
-  width: "80%",
-  position: "absolute",
-  right: 0,
-  top: 0,
-  padding: 0,
-  margin: 0
+    height: "100%",
+    width: "80%",
+    position: "absolute",
+    right: 0,
+    top: 0,
+    padding: 0,
+    margin: 0
 }
 
 export default function Blog() {
-  //通信するためのSocket
-  //const socket = io();
-  console.log("<<< page loaded >>>");
+    //通信するためのSocket
+    //const socket = io();
+    console.log("<<< page loaded >>>");
 
-  return (
-<>
-    <InsertS />
-    <div style={forBar}>
-        <Cbar />
-    </div>
-    <div style={forWindow}>
-        <Chatw />
-    </div>
-</>
-  )
+    return (
+        <>
+            <InsertS />
+            <div style={forBar}>
+                <Cbar />
+            </div>
+            <div style={forWindow}>
+                <Chatw />
+            </div>
+        </>
+    )
 
 }

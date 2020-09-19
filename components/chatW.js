@@ -67,12 +67,12 @@ function chatSend(s) {
 var msgList = [];
 function msgLists() {
     return (
-    <>
-    {/*この↓のチャンネルの部分はサーバーより受け取る*/}
-    {["msgList","uh"].map((text, index) => (
-        <div key={text} style={chatPaperStyle}>{text}</div>
-    ))}
-    </>);
+        <>
+            {/*この↓のチャンネルの部分はサーバーより受け取る*/}
+            {["msgList", "uh"].map((text, index) => (
+                <div key={text} style={chatPaperStyle}>{text}</div>
+            ))}
+        </>);
     //return msgListShown;
 
 }
@@ -100,7 +100,7 @@ export default function chatWin() {
         //メッセージを出力するためにchatWのウィンドウを取得
         var magCont = document.getElementById("chatW");
         //出力
-        magCont.innerHTML+=('<div style="width:90%;padding:20px;padding-top:5px;padding-bottom:5px;border:solid 1px;border-color:rgba(0,0,0,0.13);border-radius:3px;margin-top:2%">'+data.message+'</div>');
+        magCont.innerHTML += ('<div style="width:90%;padding:20px;padding-top:5px;padding-bottom:5px;border:solid 1px;border-color:rgba(0,0,0,0.13);border-radius:3px;margin-top:2%">' + data.message + '</div>');
         /*
         var element = document.getElementById("chatW");
         var positionY = element.offsetTop; // 変更点
@@ -117,20 +117,20 @@ export default function chatWin() {
     return (
         <>
             <div style={chatHead}>
-                <title style={{margin:0}}>{/*{location.pathname.split("/")[1]}*/}</title>
-                <Typography variant="overline" style={{ color:"rgba(0, 0, 0, 0.6)",marginTop:"2px" }}>これが説明</Typography>
+                <title style={{ margin: 0 }}>{/*{location.pathname.split("/")[1]}*/}</title>
+                <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)", marginTop: "2px" }}>これが説明</Typography>
             </div>
             <Divider />
             <div style={chatWL}>
-                <span id="chatW" style={{margin:"2%", width:"100%"}}>
+                <span id="chatW" style={{ margin: "2%", width: "100%" }}>
                     <Paper style={chatPaperStyle} variant="outlined">asdf</Paper>
                     {msgLists()}
                 </span>
             </div>
             <Divider />
             <div style={chatInputStyle}>
-                <span style={{float:"left", marginRight:"3%", width:"85%"}}><TextField style={{width:"100%",float:"left"}} id="outlined-basic msgBox" label="メッセージ" variant="outlined" /></span>
-                <Button style={{height: '100%'}} onClick={()=>{chatSend(socket)}} variant="outlined">送信</Button>
+                <span style={{ float: "left", marginRight: "3%", width: "85%" }}><TextField style={{ width: "100%", float: "left" }} id="outlined-basic msgBox" label="メッセージ" variant="outlined" /></span>
+                <Button style={{ height: '100%' }} onClick={() => { chatSend(socket) }} variant="outlined">送信</Button>
             </div>
         </>
     );

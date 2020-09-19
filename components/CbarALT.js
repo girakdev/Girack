@@ -8,71 +8,71 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { ListItem } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-    width: "100%"
-  },
-  drawer: {
-    width: "100%"
-  },
-  appBar: {
-    [theme.breakpoints.up("sm")]: {
-      width: "100%"
+    root: {
+        display: "flex",
+        width: "100%"
     },
-    backgroundColor: "#EEE"
-  },
-  menuButton: {
-    [theme.breakpoints.up("sm")]: {
-      display: "none"
+    drawer: {
+        width: "100%"
+    },
+    appBar: {
+        [theme.breakpoints.up("sm")]: {
+            width: "100%"
+        },
+        backgroundColor: "#EEE"
+    },
+    menuButton: {
+        [theme.breakpoints.up("sm")]: {
+            display: "none"
+        }
+    },
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
+    drawerPaper: {},
+    content: {
+        flexGrow: 1,
     }
-  },
-  // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
-  drawerPaper: {},
-  content: {
-    flexGrow: 1,
-  }
 }));
 
 function ResponsiveDrawer(props) {
-  const { window } = props;
-  const classes = useStyles();
-  const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+    const { window } = props;
+    const classes = useStyles();
+    const theme = useTheme();
+    const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
 
-  const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <List>
-        {["general", "random", "devs", "MI"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-    </div>
-  );
+    const drawer = (
+        <div>
+            <div className={classes.toolbar} />
+            <List>
+                {["general", "random", "devs", "MI"].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+            <Divider />
+        </div>
+    );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+    const container =
+        window !== undefined ? () => window().document.body : undefined;
 
-  return (
-    <>
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        {/* ここにコメント一番下の要素が入る*/}
-        <Drawer
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-    </>
-  );
+    return (
+        <>
+            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+            {/* ここにコメント一番下の要素が入る*/}
+            <Drawer
+                variant="permanent"
+                open
+            >
+                {drawer}
+            </Drawer>
+        </>
+    );
 }
 
 export default ResponsiveDrawer;
