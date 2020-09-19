@@ -7,15 +7,14 @@ import Header from './Header';
 export default function Popalert(props) {
     console.log("alert pop up");
     return (
-<>
-<Alert severity="warning"
-    action {
-        <Button onClick={() => {setOpen(false);}} color="inherit" size="small">CLOSE</Button>
-    }
->
-    {props.children}
-</Alert>
-</>
+        <>
+            <Alert severity="warning"
+                action={
+                    <Button onClick={() => { setOpen(false); }} color="inherit" size="small">CLOSE</Button>
+                }
+            >
+                {props.children}
+            </Alert>
+        </>
     );
-   
 }
