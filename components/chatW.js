@@ -57,8 +57,10 @@ const chatPaperStyle = {
 
 //チャットの送信
 const chatSend = (s) => {
-    var msg = document.getElementById("outlined-basic msgBox")._valueTracker.getValue();
-    s.emit("msgS", msg);
+    const msg = document.getElementById("outlined-basic msgBox")._valueTracker.getValue();
+    if (msg !== "") {
+        s.emit("msgS", msg);
+    }
 
 }
 
