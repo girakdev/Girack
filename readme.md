@@ -11,8 +11,16 @@
 npm install
 ```
 これで必要なファイルのダウンロードが始まるはずです。(package.jsonを元に)
+
 んでこれでサーバーそのものをスタート。
 標準ポートは3000となっています。
 ```
 node server.js
 ```
+
+## 使用したライブラリ、フレームワーク
+SocketIO
+React
+NextJS
+NodeJS
+MaterialUI
