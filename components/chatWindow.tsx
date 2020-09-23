@@ -8,6 +8,7 @@ import Header from './Header';
 
 const layoutStyle = {
     border: '1px solid #DDD',
+    width: "80%",
     height: "70%"
 
 }
@@ -16,6 +17,7 @@ const layoutStyle = {
 const chatHead = {
     fontSize: "20px",
     height: "10%",
+    paddingLeft: "1%",
     marginTop: "2%",
 }
 
@@ -23,19 +25,20 @@ const chatHead = {
 const chatWL = {
     width: "95%",
     height: "75%",
-    position: "relative",
     paddingLeft: "2%",
     overflow: "auto",
 }
 
 const useStyles = createStyles({
     cw: {
+        width: "80%",
         height: "70%",
         position: "relative"
     },
 });
 
 const chatInputStyle = {
+    width: "75%",
     marginLeft: "3%",
     marginTop: "5%",
 }
@@ -58,9 +61,10 @@ const chatWindow = (s) => {
                 <title style={{ margin: 0 }}>{/*{location.pathname.split("/")[1]}*/}</title>
                 <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)", marginTop: "2px" }}>これが説明</Typography>
             </div>
+
             <Divider />
-            <div>
-                <Paper style={chatPaperStyle} variant="outlined">asdf</Paper>
+            <div style={chatWL}>
+                <Paper style={chatPaperStyle} variant="outlined">test</Paper>
             </div>
             <Divider />
             <div style={chatInputStyle}>
