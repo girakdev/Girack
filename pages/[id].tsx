@@ -2,7 +2,7 @@
 
 import Layout from '../components/MyLayout';
 import Cbar from '../components/Cbar';
-import Chatw from "../components/chatW";
+import Chatw from "../components/chatWindow";
 import InsertS from "../styles/style";
 import io from 'socket.io-client';
 import useStyles from '../styles/useStyles';

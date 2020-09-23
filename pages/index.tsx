@@ -1,7 +1,7 @@
 // pages/index.js
 
 import Cbar from '../components/Cbar';
-import Chatw from "../components/chatW";
+import Chatw from "../components/chatWindow";
 import InsertS from "../styles/style";
 import useStyles from '../styles/useStyles';
 
