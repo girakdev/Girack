@@ -8,7 +8,6 @@ import Header from './Header';
 
 const layoutStyle = {
     border: '1px solid #DDD',
-    width: "80%",
     height: "70%"
 
 }
@@ -17,7 +16,6 @@ const layoutStyle = {
 const chatHead = {
     fontSize: "20px",
     height: "10%",
-    paddingLeft: "1%",
     marginTop: "2%",
 }
 
@@ -32,14 +30,12 @@ const chatWL = {
 
 const useStyles = createStyles({
     cw: {
-        width: "80%",
         height: "70%",
         position: "relative"
     },
 });
 
 const chatInputStyle = {
-    width: "75%",
     marginLeft: "3%",
     marginTop: "5%",
 }
@@ -63,12 +59,13 @@ const chatWindow = (s) => {
                 <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)", marginTop: "2px" }}>これが説明</Typography>
             </div>
             <Divider />
-            <div style={chatWL}>
+            <div>
+                <Paper style={chatPaperStyle} variant="outlined">asdf</Paper>
             </div>
             <Divider />
             <div style={chatInputStyle}>
-                <span style={{ float: "left", marginRight: "3%", width: "85%" }}><TextField style={{ width: "100%", float: "left" }} onChange={e => setMsgText(e.target.value)} label="メッセージ" variant="outlined" /></span>
-                <Button style={{ height: '100%' }} onClick={() => { chatSend(socket) }} variant="outlined">送信</Button>
+                <span style={{ float: "left", marginRight: "3%", width: "85%" }}><TextField style={{ width: "100%", float: "left" }} label="メッセージ" variant="outlined" /></span>
+                <Button style={{ height: '100%' }} variant="outlined">送信</Button>
             </div>
         </>
     );
