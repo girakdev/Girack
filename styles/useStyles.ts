@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     //チャンネルウィンドウのスタイル（右）
     window: {
-        height: "100%",
+        height: "96%",
         width: "80%",
         position: "absolute",
         right: 0,
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         padding: 0,
         margin: 0
     }
+
 }));
 
 export default useStyles;
