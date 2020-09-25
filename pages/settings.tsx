@@ -12,13 +12,7 @@ const settings = () => {
 
     return (
         <>
-            <InsertS />
-            <div className={classes.bar}>
-                <Cbar />
-            </div>
-            <div className={classes.window}>
-                <Chatw />
-            </div>
+            <h1>設定ページ</h1>
         </>
 
     );

@@ -8,7 +8,7 @@ import Header from './Header';
 
 const layoutStyle = {
     border: '1px solid #DDD',
-    width: "80%",
+    width: "100%",
     height: "70%"
 
 }
@@ -23,7 +23,7 @@ const chatHead = {
 
 //メッセージを放り込む部分
 const chatWL = {
-    width: "95%",
+    width: "100%",
     height: "75%",
     paddingLeft: "2%",
     overflow: "auto",

@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     //チャンネルバーのスタイル
     bar: {
         height: "100%",
-        width: "20%",
+        width: "20vw",
         maxWidth: "200px",
         position: "absolute",
         left: 0,
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     //チャンネルウィンドウのスタイル（右）
     window: {
         height: "96%",
-        width: "80%",
+        width: "80vw",
         position: "absolute",
         right: 0,
         top: 0,
