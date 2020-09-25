@@ -4,6 +4,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Divider, TextField, Paper, Button } from '@material-ui/core';
 import io from 'socket.io-client';
 import Header from './Header';
+import { useRouter } from 'next/router';
 //import Alrt from '../components/alert.js';
 
 const layoutStyle = {
@@ -55,11 +56,14 @@ const chatPaperStyle = {
 }
 
 const chatWindow = (s) => {
+    const router = useRouter();
+    const channelID = router.query.id;
     return (
         <>
             <div style={chatHead}>
-                <title style={{ margin: 0 }}>{/*{location.pathname.split("/")[1]}*/}</title>
-                <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)", marginTop: "2px" }}>これが説明</Typography>
+                <title style={{ margin: 0 }}>{ router.query.id }</title>
+                <h2>{ channelID }</h2>
+                
             </div>
 
             <Divider />
