@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Grid, Button, Divider, NoSsr } from '@material-ui/core';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 //ボタン用のスタイル
 const BsButton = withStyles({
@@ -11,8 +12,8 @@ const BsButton = withStyles({
         fontSize: 15,
         textAlign: "left",
         paddingLeft: "5px",
-        paddingTop: '2px',
-        paddingBottom: '2px',
+        paddingTop: '1px',
+        paddingBottom: '1px',
         marginLeft: 0,
         border: '1px solid rgba(0,0,0,0)',
         borderRadius: "0 2ch 2ch 0",
@@ -44,6 +45,49 @@ const BsButton = withStyles({
         },
     },
 })(Button);
+
+const BsButtonActive = withStyles({
+    root: {
+        boxShadow: 'none',
+        textTransform: 'none',
+        fontSize: 15,
+        textAlign: "left",
+
+        backgroundColor: '#4cd3c2',
+        borderColor: '#0a97b0',
+
+        paddingLeft: "5px",
+        paddingTop: '2px',
+        paddingBottom: '2px',
+
+        marginLeft: 0,
+        border: '1px solid rgba(0,0,0,0)',
+        borderRadius: "0 2ch 2ch 0",
+        lineHeight: 0.2,
+        width: "90%",
+        fontFamily: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(','),
+        '&:active': {
+            boxShadow: 'none',
+            backgroundColor: '#4cd3c2',
+            borderColor: '#0a97b0',
+        },
+        '&:focus': {
+            boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+        },
+    },
+})(Button);
+
 
 //チャンネルリストを出力する
 const draw = (
@@ -79,6 +123,9 @@ const SettingButton = withStyles((theme) => ({
 }))(Button);
 
 const chatWin = () => {
+    //URLのパス取得用
+    const router = useRouter();
+    const channelID = router.asPath;
     return (
         <>
             <NoSsr> {/* サーバーサイドレンダリングを殺しています */}

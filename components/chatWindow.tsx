@@ -4,11 +4,12 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Divider, TextField, Paper, Button } from '@material-ui/core';
 import io from 'socket.io-client';
 import Header from './Header';
+import { useRouter } from 'next/router';
 //import Alrt from '../components/alert.js';
 
 const layoutStyle = {
     border: '1px solid #DDD',
-    width: "80%",
+    width: "100%",
     height: "70%"
 
 }
@@ -23,7 +24,7 @@ const chatHead = {
 
 //メッセージを放り込む部分
 const chatWL = {
-    width: "95%",
+    width: "100%",
     height: "75%",
     paddingLeft: "2%",
     overflow: "auto",
@@ -55,11 +56,14 @@ const chatPaperStyle = {
 }
 
 const chatWindow = (s) => {
+    const router = useRouter();
+    const channelID = router.query.id;
     return (
         <>
             <div style={chatHead}>
-                <title style={{ margin: 0 }}>{/*{location.pathname.split("/")[1]}*/}</title>
-                <Typography variant="overline" style={{ color: "rgba(0, 0, 0, 0.6)", marginTop: "2px" }}>これが説明</Typography>
+                <title style={{ margin: 0 }}>{ router.query.id }</title>
+                <h2>{ channelID }</h2>
+                
             </div>
 
             <Divider />
