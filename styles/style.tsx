@@ -12,7 +12,7 @@ export default function insertStyle() {
 body
 {
     font-family: 'Noto Sans JP', sans-serif;
-    overflow: neno;
+    overflow: hidden;
 }
 
 .forWin 
