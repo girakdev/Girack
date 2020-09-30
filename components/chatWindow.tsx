@@ -30,13 +30,13 @@ const chatWL = {
     overflow: "auto",
 }
 
-const useStyles = createStyles({
+const useStyles = makeStyles((theme) => createStyles({
     cw: {
         width: "80%",
         height: "70%",
         position: "relative"
     },
-});
+}));
 
 const chatInputStyle = {
     width: "75%",
@@ -61,9 +61,8 @@ const chatWindow = (s) => {
     return (
         <>
             <div style={chatHead}>
-                <title style={{ margin: 0 }}>{ router.query.id }</title>
-                <h2>{ channelID }</h2>
-                
+                <title style={{ margin: 0 }}>{router.query.id}</title>
+                <h2>{channelID}</h2>
             </div>
 
             <Divider />

@@ -1,27 +1,30 @@
 // pages/index.js
 
-import Cbar from '../components/Cbar';
 import Sidebar, { Item } from '../components/SideBar';
 import Chatw from "../components/chatWindow";
-import InsertS from "../styles/style";
-import useStyles from '../styles/useStyles';
+import Home from "../components/Home";
+import { createStyles, List, makeStyles } from "@material-ui/core"
+
+const useStyles = makeStyles((theme) => createStyles({
+    root: {
+        display: 'flex',
+    },
+}));
 
 
 const Blog = () => {
     //通信するためのSocket
     //const socket = io();
-    console.log("<<< page loaded >>>");
     const classes = useStyles();
+    console.log("<<< page loaded >>>");
     const item1: Item = { text: 'Hello' };
 
+
     return (
-        <>
-            <InsertS />
+        <div className={classes.root}>
             <Sidebar items={[item1]} />
-            <div className={classes.window}>
-                <Chatw />
-            </div>
-        </>
+            <Home />
+        </div>
     );
 
 }

@@ -11,6 +11,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import AddIcon from '@material-ui/icons/Add';
+import ServerContent from './Cbar'
+import Link from 'next/link'
 
 const drawerWidth = 240;
 
@@ -70,6 +72,7 @@ const SideBar = (props: Props) => {
     setOpen(false);
   };
 
+
   return (
     <Drawer
       color='primary'
@@ -85,7 +88,23 @@ const SideBar = (props: Props) => {
         }),
       }}
     >
+      <ServerContent />
+
       <List>
+        <Link href="/" >
+          <ListItem button >
+            <ListItemIcon><AddIcon /></ListItemIcon>
+            <ListItemText primary="ホーム" />
+          </ListItem>
+        </Link>
+        {["すべての通知", "ブックマーク",].map((text, index) => (
+          <Link href="/[id]" as={"/" + text}>
+            <ListItem button >
+              <ListItemIcon><AddIcon /></ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          </Link>
+        ))}
         {props.items.map((item) => (
           <ListItem button key={item.text}>
             <ListItemIcon><MailIcon /></ListItemIcon>
@@ -113,7 +132,7 @@ const SideBar = (props: Props) => {
           <ListItemText primary='Collapse' />
         </ListItem>
       </List>
-    </Drawer>
+    </Drawer >
   );
 }
 

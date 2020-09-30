@@ -44,19 +44,6 @@ const ResponsiveDrawer = (props) => {
         setMobileOpen(!mobileOpen);
     };
 
-    const drawer = (
-        <div>
-            <div className={classes.toolbar} />
-            <List>
-                {["general", "random", "devs", "MI"].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-        </div>
-    );
 
     const container =
         window !== undefined ? () => window().document.body : undefined;
@@ -69,7 +56,6 @@ const ResponsiveDrawer = (props) => {
                 variant="permanent"
                 open
             >
-                {drawer}
             </Drawer>
         </>
     );
@@ -78,19 +64,19 @@ const ResponsiveDrawer = (props) => {
 export default ResponsiveDrawer;
 /* もともとHiddenのすぐ上にあった要素
 <Hidden implementation="css">
-          <Drawer
+        <Drawer
             container={container}
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}
             classes={{
-              paper: classes.drawerPaper
+            paper: classes.drawerPaper
             }}
             ModalProps={{
               keepMounted: true // Better open performance on mobile.
             }}
-          >
+        >
             {drawer}
-          </Drawer>
+        </Drawer>
         </Hidden>
 */

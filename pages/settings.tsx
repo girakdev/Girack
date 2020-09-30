@@ -1,6 +1,6 @@
 //settings.js
 
-import Cbar from '../components/Cbar';
+
 import Chatw from "../components/chatWindow";
 import Layout from '../components/MyLayout';
 import io from 'socket.io-client';
