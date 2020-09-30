@@ -18,9 +18,6 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
         return (
             <>
-                <Head>
-
-                </Head>
                 <ThemeProvider theme={theme}>
                     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                     <CssBaseline />
