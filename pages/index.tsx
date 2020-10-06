@@ -1,7 +1,6 @@
 // pages/index.js
 
-import Sidebar, { Item } from '../components/SideBar';
-import Chatw from "../components/chatWindow";
+import Sidebar from '../components/SideBar';
 import Home from "../components/Home";
 import { createStyles, List, makeStyles } from "@material-ui/core"
 
@@ -16,13 +15,13 @@ const Blog = () => {
     //通信するためのSocket
     //const socket = io();
     const classes = useStyles();
-    console.log("<<< page loaded >>>");
-    const item1: Item = { text: 'Hello' };
+
+
 
 
     return (
         <div className={classes.root}>
-            <Sidebar items={[item1]} />
+            <Sidebar />
             <Home />
         </div>
     );

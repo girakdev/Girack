@@ -9,10 +9,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import AddIcon from '@material-ui/icons/Add';
 import ServerContent from './Cbar'
 import Link from 'next/link'
+import HomeIcon from '@material-ui/icons/Home';
 
 const drawerWidth = 240;
 
@@ -52,15 +52,15 @@ const useStyles = makeStyles((theme) => createStyles({
   },
 }));
 
-export type Item = {
+/*export type Item = {
   text: string,
-};
+};*/
 
-type Props = {
+/*type Props = {
   items: Item[],
-};
+};*/
 
-const SideBar = (props: Props) => {
+const SideBar = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -93,27 +93,30 @@ const SideBar = (props: Props) => {
       <List>
         <Link href="/" >
           <ListItem button >
-            <ListItemIcon><AddIcon /></ListItemIcon>
+            <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="ホーム" />
           </ListItem>
         </Link>
         {["すべての通知", "ブックマーク",].map((text, index) => (
-          <Link href="/[id]" as={"/" + text}>
+          <Link key={text} href="/[id]" as={"/" + text}>
             <ListItem button >
               <ListItemIcon><AddIcon /></ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           </Link>
         ))}
-        {props.items.map((item) => (
+
+
+        <Divider />
+
+        {/*{props.items.map((item) => (
           <ListItem button key={item.text}>
-            <ListItemIcon><MailIcon /></ListItemIcon>
+            <ListItemIcon><AddIcon /></ListItemIcon>
             <ListItemText primary={item.text} />
           </ListItem>
-        ))}
+        ))}*/}
       </List>
 
-      <Divider />
 
       <List>
         <ListItem button key='Add'>
