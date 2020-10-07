@@ -97,6 +97,8 @@ const SideBar = () => {
             <ListItemText primary="ホーム" />
           </ListItem>
         </Link>
+
+        <Divider />
         {["すべての通知", "ブックマーク",].map((text, index) => (
           <Link key={text} href="/[id]" as={"/" + text}>
             <ListItem button >
@@ -106,23 +108,12 @@ const SideBar = () => {
           </Link>
         ))}
 
-
-        <Divider />
-
         {/*{props.items.map((item) => (
           <ListItem button key={item.text}>
             <ListItemIcon><AddIcon /></ListItemIcon>
             <ListItemText primary={item.text} />
           </ListItem>
         ))}*/}
-      </List>
-
-
-      <List>
-        <ListItem button key='Add'>
-          <ListItemIcon><AddIcon /></ListItemIcon>
-          <ListItemText primary='Add' />
-        </ListItem>
       </List>
 
       <List className={clsx(classes.drawerFooter)}>
