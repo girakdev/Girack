@@ -9,6 +9,9 @@ import theme from '../src/theme';
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
+        width: '100%',
+        height: '100vh',
+        position: 'relative',
 
     },
     cw: {
@@ -27,6 +30,7 @@ const useStyles = makeStyles((theme) => createStyles({
         height: "75%",
         paddingLeft: "2%",
         overflow: "auto",
+
     },
     chatPaperStyle: {
         width: "90%",
@@ -38,11 +42,17 @@ const useStyles = makeStyles((theme) => createStyles({
         borderRadius: "3px",
         marginTop: "2%",
     },
+    bottomPosition: {
+        width: '100%',
+        position: 'absolute',
+        bottom: '0px',
+    },
     chatInputStyle: {
         width: "75%",
         marginLeft: "3%",
         marginTop: "5%",
     },
+
 
 }));
 
@@ -61,12 +71,15 @@ const chatWindow = () => {
             <div className={classes.chatWL}>
                 <Paper className={classes.chatPaperStyle} variant="outlined">test</Paper>
             </div>
-            <Divider />
-            <div className={classes.chatInputStyle}>
-                <span style={{ float: "left", marginRight: "3%", width: "85%" }}><TextField style={{ width: "100%", float: "left" }} label="メッセージ" variant="outlined" /></span>
-                <Button style={{ height: '100%' }} variant="outlined">送信</Button>
+            <div className={classes.bottomPosition}>
+                <Divider />
+                <div className={classes.chatInputStyle}>
+                    <span style={{ float: "left", marginRight: "3%", width: "85%" }}><TextField style={{ width: "100%", float: "left" }} label="メッセージ" variant="outlined" /></span>
+                    <Button style={{ height: '100%' }} variant="outlined">送信</Button>
+                </div>
             </div>
         </div>
+
     );
 
 }
