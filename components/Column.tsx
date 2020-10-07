@@ -12,6 +12,13 @@ const useStyles = makeStyles((theme) => createStyles({
         display: 'inline-block',
         overflowY: 'auto',
     },
+    clumnName: {
+        fontSize: '20px',
+        margin: '0px',
+        paddingTop: '10px',
+        paddingBottom: '10px',
+        paddingLeft: '20px',
+    },
 }));
 
 const Column = () => {
@@ -19,7 +26,7 @@ const Column = () => {
 
     return (
         <List className={classes.root}>
-            <h3>test</h3>
+            <h3 className={classes.clumnName}>test</h3>
             <Item />
             <Item />
             <Item />
