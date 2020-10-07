@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Divider, TextField, Paper, Button } from '@material-ui/core';
 import io from 'socket.io-client';
-import Header from './Header';
 import { useRouter } from 'next/router';
 //import Alrt from '../components/alert.js';
 
@@ -30,13 +29,13 @@ const chatWL = {
     overflow: "auto",
 }
 
-const useStyles = createStyles({
+const useStyles = makeStyles((theme) => createStyles({
     cw: {
         width: "80%",
         height: "70%",
         position: "relative"
     },
-});
+}));
 
 const chatInputStyle = {
     width: "75%",
@@ -61,9 +60,8 @@ const chatWindow = (s) => {
     return (
         <>
             <div style={chatHead}>
-                <title style={{ margin: 0 }}>{ router.query.id }</title>
-                <h2>{ channelID }</h2>
-                
+                <title style={{ margin: 0 }}>{router.query.id}</title>
+                <h2>{channelID}</h2>
             </div>
 
             <Divider />
