@@ -1,12 +1,12 @@
 import Chatwindow from "../components/ChatWindow";
 import Sidebar from '../components/SideBar';
-
 import { createStyles, List, makeStyles } from "@material-ui/core"
+
 
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
-        /*display: 'flex',*/
+        display: 'flex',
     },
 }));
 
@@ -18,12 +18,10 @@ const channel = () => {
 
     return (
         <div className={classes.root}>
-
-            <Chatwindow />
             <Sidebar />
+            <Chatwindow />
         </div>
-
-    )
+    );
 
 }
 
