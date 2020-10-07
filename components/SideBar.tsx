@@ -91,7 +91,7 @@ const SideBar = () => {
       <ServerContent />
 
       <List>
-        <Link href="/" >
+        <Link href="/home" >
           <ListItem button >
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="ホーム" />
@@ -102,7 +102,7 @@ const SideBar = () => {
         {["すべての通知", "ブックマーク",].map((text, index) => (
           <Link key={text} href="/[id]" as={"/" + text}>
             <ListItem button >
-              <ListItemIcon><AddIcon /></ListItemIcon>
+              <ListItemIcon>＃</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           </Link>

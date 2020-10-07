@@ -6,7 +6,8 @@ import io from 'socket.io-client';
 import { useRouter } from 'next/router';
 import theme from '../src/theme';
 import HomeIcon from '@material-ui/icons/Home';
-//import Alrt from '../components/alert.js';
+
+import PostNote from './PostStyle'
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -27,7 +28,6 @@ const useStyles = makeStyles((theme) => createStyles({
         marginTop: "10px",
         marginLeft: "20px",
         fontSize: "10px",
-
     },
     topicText: {
         paddingLeft: '10px',
@@ -35,11 +35,11 @@ const useStyles = makeStyles((theme) => createStyles({
     },
     chatWL: {
         width: "100%",
-        height: "75%",
-        marginTop: "30px",
+        height: "85%",
         paddingLeft: "2%",
         overflow: "auto",
     },
+    /*消去予定--------------------------------------------------------------*/
     postText: {
         width: '100%',
         display: 'flex',
@@ -63,7 +63,9 @@ const useStyles = makeStyles((theme) => createStyles({
         paddingLeft: "0px",
         paddingTop: "5px",
         paddingBottom: "5px",
+        display: 'flex',
     },
+    /*ーーーーーーーーーーーーーーーーーーー--------------------ーーー*/
     bottomPosition: {
         width: '100%',
         position: 'absolute',
@@ -80,34 +82,70 @@ const chatWindow = () => {
     const router = useRouter();
     const channelID = router.query.id;
     const topicText = "testtest"
+
+    /* postの処理 */
+    const [posts, setPost] = React.useState([]);
+    const [tmpPost, setTmpPost] = React.useState("");
+
+
+    const addPost = () => {
+        if (tmpPost === "") {
+            return;
+        }
+
+        setPost([...posts, tmpPost]);
+        localStorage.setItem('posts', JSON.stringify([...posts, tmpPost]));
+        setTmpPost("");
+
+    };
+
+
+    const now = new Date();
+    const mon = now.getMonth() + 1; //１を足すこと
+    const day = now.getDate();
+    const hour = now.getHours();
+    const min = now.getMinutes();
+    const sec = now.getSeconds();
+    const s = mon + "/" + day + " " + hour + ":" + min;
+
+
+
+
+
     return (
         <div className={classes.root}>
             <div className={classes.chatHead}>
-                <title style={{ margin: 0 }}>{router.query.id}</title>
-                <h2 className={classes.channelText}>{channelID}</h2>
+                <title style={{ margin: 0 }}>#{router.query.id}</title>
+                <h2 className={classes.channelText}>#{channelID}</h2>
                 <div className={classes.topicText}>topic:{topicText}</div>
             </div>
 
             <Divider />
             <div className={classes.chatWL}>
-                <div className={classes.postText}>
-                    <div className={classes.userPostIcon}><HomeIcon /></div>
-                    <div>
-                        <div className={classes.userPostname} >user1
-                        <span className={classes.postTime}>00:00</span>
+                {posts.map((post, index) => (
+                    <div key={(index)}>
+                        <div className={classes.postText}>
+                            <div className={classes.userPostIcon}><HomeIcon /></div>
+                            <div>
+                                <div className={classes.userPostname} >user1
+                                <span className={classes.postTime}>{s}</span>
+                                </div>
+                                <div className={classes.chatStyle}>{post}</div>
+                            </div>
                         </div>
-                        <div className={classes.chatStyle}>testtesttest adsfadsfadsfasdfasdfadsfffffffffffffffffffffffffffffffffffffffffffffffffffasdfasdfadfadsfajekhrasejfaheajefakejaekfa</div>
                     </div>
-                </div>
+                ))}
+
             </div>
             <div className={classes.bottomPosition}>
                 <div className={classes.chatInputStyle}>
                     <span style={{ float: "left", marginRight: "3px", width: "100%" }}>
-                        <TextField style={{ width: "90%", float: "left" }} label="メッセージ" variant="outlined" />
+                        <TextField style={{ width: "90%", float: "left" }} label="メッセージ" variant="outlined" value={tmpPost} onChange={e => setTmpPost(e.target.value)} />
+                        <Button variant="contained" color="primary" onClick={addPost}>送信</Button>
                     </span>
                 </div>
             </div>
-        </div>
+        </div >
     );
 
 }
