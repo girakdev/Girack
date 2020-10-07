@@ -99,7 +99,7 @@ const chatWindow = () => {
 
     };
 
-
+    /*これは一時的なものなので消去予定*/
     const now = new Date();
     const mon = now.getMonth() + 1; //１を足すこと
     const day = now.getDate();
@@ -107,7 +107,7 @@ const chatWindow = () => {
     const min = now.getMinutes();
     const sec = now.getSeconds();
     const s = mon + "/" + day + " " + hour + ":" + min;
-
+    /*------------------*/
 
 
 
