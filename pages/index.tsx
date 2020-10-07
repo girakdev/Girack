@@ -1,5 +1,3 @@
-// pages/index.js
-
 import Sidebar from '../components/SideBar';
 import Home from "../components/Home";
 import { createStyles, List, makeStyles } from "@material-ui/core"
@@ -15,8 +13,6 @@ const Blog = () => {
     //通信するためのSocket
     //const socket = io();
     const classes = useStyles();
-
-
 
 
     return (

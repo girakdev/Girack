@@ -20,14 +20,7 @@ const chatWin = () => {
                     </div>
                 </span>
             </div>
-
-            <Grid
-                container direction="column"
-                justify="flex-start"
-                alignItems="flex-start"
-                style={{ marginTop: "10%" }}
-            >
-            </Grid>
+            <Divider />
         </>
 
     );
