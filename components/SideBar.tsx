@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { createStyles, makeStyles } from "@material-ui/core";
+import { Button, createStyles, makeStyles } from "@material-ui/core";
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => createStyles({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
+  },
+  addCannelButton: {
+    marginTop: '10px',
+    paddingLeft: '20px',
   },
   drawerOpen: {
     width: drawerWidth,
@@ -72,6 +76,10 @@ const SideBar = () => {
     setOpen(false);
   };
 
+  const addChannel = () => {
+
+  }
+
 
   return (
     <Drawer
@@ -98,8 +106,13 @@ const SideBar = () => {
           </ListItem>
         </Link>
 
-        <Divider />
-        {["すべての通知", "ブックマーク",].map((text, index) => (
+        <div className={classes.addCannelButton}>
+          <ListItemIcon>_/</ListItemIcon>
+          チャンネル
+          <span><Button onClick={addChannel}>＋ </Button></span>
+        </div>
+
+        {["general", "randam",].map((text, index) => (
           <Link key={text} href="/[id]" as={"/" + text}>
             <ListItem button >
               <ListItemIcon>＃</ListItemIcon>

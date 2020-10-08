@@ -4,6 +4,7 @@ import { Grid, Button, Divider, NoSsr, createStyles } from '@material-ui/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import theme from '../src/theme';
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyle = makeStyles((theme) => createStyles({
     root: {},
@@ -16,6 +17,9 @@ const useStyle = makeStyles((theme) => createStyles({
 
 }))
 
+
+
+/*要調整*/
 const chatWin = () => {
     const classes = useStyle();
     const router = useRouter();
@@ -23,7 +27,9 @@ const chatWin = () => {
     return (
         <div className={classes.root}>
             <div className={classes.serverName}>
-                <span >serverName</span>
+                <div><HomeIcon />
+                    <span >   serverName</span>
+                </div>
             </div>
             <Divider />
         </div>
