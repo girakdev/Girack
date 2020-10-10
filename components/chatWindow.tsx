@@ -8,6 +8,8 @@ import theme from '../src/theme';
 import HomeIcon from '@material-ui/icons/Home';
 
 import PostNote from './PostStyle'
+import axios from 'axios';
+
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -77,6 +79,12 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
+/*APIテスト*/
+const getProfile = async () => {
+
+};
+
+
 const chatWindow = () => {
     const classes = useStyles();
     const router = useRouter();
@@ -111,7 +119,6 @@ const chatWindow = () => {
 
 
 
-
     return (
         <div className={classes.root}>
             <div className={classes.chatHead}>
@@ -142,6 +149,7 @@ const chatWindow = () => {
                     <span style={{ float: "left", marginRight: "3px", width: "100%" }}>
                         <TextField style={{ width: "90%", float: "left" }} label="メッセージ" variant="outlined" value={tmpPost} onChange={e => setTmpPost(e.target.value)} />
                         <Button variant="contained" color="primary" onClick={addPost}>送信</Button>
+                        <Button onClick={() => getProfile()}>GetTest</Button>
                     </span>
                 </div>
             </div>
