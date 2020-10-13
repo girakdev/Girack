@@ -1,6 +1,11 @@
 import React from 'react';
-import { createStyles, List, makeStyles } from "@material-ui/core"
+import { createStyles, List, makeStyles, Button, ListSubheader } from "@material-ui/core"
 import Column from "../components/Column"
+import AddIcon from '@material-ui/icons/Add';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -11,20 +16,39 @@ const useStyles = makeStyles((theme) => createStyles({
         overflowY: 'hidden',
         whiteSpace: 'nowrap',
     },
+    addColumn: {
+        marginLeft: theme.spacing(0.5),
+        marginRight: theme.spacing(0.5),
+        width: theme.spacing(32),
+        padding: '0px',
+        height: '100%',
+        display: 'inline-block',
+        overflowY: 'auto',
+        flexDirection: 'column',
+    },
+    AddColumnButton: {
+        textAlign: 'center',
+        backgroundColor: theme.palette.background.paper,
+    }
 }));
 
 const ColumnList = () => {
     const classes = useStyles();
+    const [Columns, setColumn] = React.useState([]);
+
+    const addColumn = () => {
+        setColumn([...Columns, '1']);
+    }
 
     return (
         <List className={classes.root}>
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
+            {Columns.map((post, index) => (
+                <Column key={(index)} />
+            ))}
+
+            <List className={classes.addColumn}>
+                <ListSubheader className={classes.AddColumnButton}><Button onClick={addColumn}> sticky</Button> </ListSubheader>
+            </List>
         </List>
     );
 }

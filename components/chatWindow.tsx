@@ -79,12 +79,6 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
-/*APIテスト*/
-const getProfile = async () => {
-
-};
-
-
 const chatWindow = () => {
     const classes = useStyles();
     const router = useRouter();
@@ -157,7 +151,6 @@ const chatWindow = () => {
                             }
                             } />
                         {/*<Button variant="contained" color="primary" onClick={addPost}>送信</Button>*/}
-                        <Button onClick={() => getProfile()}>GetTest</Button>
                     </span>
                 </div>
             </div>
