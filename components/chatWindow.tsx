@@ -147,8 +147,16 @@ const chatWindow = () => {
             <div className={classes.bottomPosition}>
                 <div className={classes.chatInputStyle}>
                     <span style={{ float: "left", marginRight: "3px", width: "100%" }}>
-                        <TextField style={{ width: "90%", float: "left" }} label="メッセージ" variant="outlined" value={tmpPost} onChange={e => setTmpPost(e.target.value)} />
-                        <Button variant="contained" color="primary" onClick={addPost}>送信</Button>
+                        <TextField style={{ width: "90%", float: "left" }} label="メッセージ" variant="outlined"
+                            value={tmpPost} onChange={e => setTmpPost(e.target.value)}
+                            onKeyPress={e => {
+                                if (e.key == 'Enter') {
+                                    addPost();
+                                    e.preventDefault();
+                                }
+                            }
+                            } />
+                        {/*<Button variant="contained" color="primary" onClick={addPost}>送信</Button>*/}
                         <Button onClick={() => getProfile()}>GetTest</Button>
                     </span>
                 </div>
