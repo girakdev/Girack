@@ -96,7 +96,7 @@ const SideBar = () => {
                     </ListItem>
                 </Link>
 
-                <Link href="/">
+                <Link href="/notification">
                     <ListItem button >
                         <Badge badgeContent={4} color="secondary">
                             <ListItemIcon>< NotificationsIcon /></ListItemIcon>
