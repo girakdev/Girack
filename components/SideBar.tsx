@@ -66,16 +66,8 @@ type Props = {
 
 const SideBar = () => {
     const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
 
-
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
 
 
     return (
@@ -84,12 +76,12 @@ const SideBar = () => {
             variant="permanent"
             className={clsx(classes.drawer, {
                 [classes.drawerOpen]: open,
-                [classes.drawerClose]: !open,
+
             })}
             classes={{
                 paper: clsx({
                     [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
+
                 }),
             }}
         >
@@ -137,14 +129,6 @@ const SideBar = () => {
 
 
             <List className={clsx(classes.drawerFooter)}>
-                <ListItem
-                    button
-                    key={open ? 'Collapse' : 'Expand'}
-                    onClick={open ? handleDrawerClose : handleDrawerOpen}
-                >
-                    <ListItemIcon>{open ? <ChevronLeftIcon /> : <ChevronRightIcon />}</ListItemIcon>
-                    <ListItemText primary='Collapse' />
-                </ListItem>
             </List>
         </Drawer >
     );
