@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Typography, Divider, TextField, Paper, Button } from '@material-ui/core';
-import io from 'socket.io-client';
+import { Typography, Divider, TextField, Paper, Button, Badge, Avatar } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import theme from '../src/theme';
 import HomeIcon from '@material-ui/icons/Home';
+
 
 import PostNote from './PostStyle'
 import axios from 'axios';
@@ -141,8 +141,11 @@ const chatWindow = () => {
 
                 {posts.map((post, index) => (
                     <div key={(index)}>
+
                         <div className={classes.postText}>
-                            <div className={classes.userPostIcon}><HomeIcon /></div>
+                            <div className={classes.userPostIcon}>
+                                <Avatar alt="Remy Sharp" src="https://nos3.arkjp.net/?url=https%3A%2F%2Fimg.pawoo.net%2Faccounts%2Favatars%2F000%2F787%2F070%2Foriginal%2F17496375cdc.gif&thumbnail=1" />
+                            </div>
                             <div>
                                 <div className={classes.userPostname} >user1
                                 <span className={classes.postTime}>{s}</span>
@@ -150,6 +153,7 @@ const chatWindow = () => {
                                 <div className={classes.chatStyle}>{post}</div>
                             </div>
                         </div>
+
                     </div>
                 ))}
                 <div ref={ref} />

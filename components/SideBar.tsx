@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Button, createStyles, makeStyles } from "@material-ui/core";
+import { Button, createStyles, makeStyles, Badge } from "@material-ui/core";
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -13,6 +13,7 @@ import ServerContent from './Cbar'
 import Link from 'next/link'
 import HomeIcon from '@material-ui/icons/Home';
 import AddChannel from './AddChannel'
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const drawerWidth = 240;
 
@@ -95,11 +96,21 @@ const SideBar = () => {
                     </ListItem>
                 </Link>
 
+                <Link href="/">
+                    <ListItem button >
+                        <Badge badgeContent={4} color="secondary">
+                            <ListItemIcon>< NotificationsIcon /></ListItemIcon>
+                            <ListItemText primary="通知" />
+                        </Badge>
+                    </ListItem>
+                </Link>
+
                 <div className={classes.addCannelButton}>
                     <ListItemIcon>_/</ListItemIcon>
                 チャンネル
                 <AddChannel />
                 </div>
+
 
                 {["general", "randam",].map((text, index) => (
                     <Link key={index} href="/[id]" as={"/" + text}>
