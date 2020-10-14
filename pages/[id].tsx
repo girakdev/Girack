@@ -1,4 +1,4 @@
-import Chatwindow from "../components/ChatWindow";
+import Chatwindow from "../components/chatWindow";
 import Sidebar from '../components/SideBar';
 import { createStyles, List, makeStyles } from "@material-ui/core"
 
