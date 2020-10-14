@@ -43,8 +43,8 @@ const chatWin = () => {
                 <div className={classes.server}>
                     {serverName}
                 </div>
-                <Divider />
             </div>
+            <Divider />
         </div >
 
     );
