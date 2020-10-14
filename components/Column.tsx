@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, List, makeStyles } from "@material-ui/core"
+import { createStyles, List, makeStyles, ListSubheader } from "@material-ui/core"
 import Item from './Item'
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -7,11 +7,17 @@ const useStyles = makeStyles((theme) => createStyles({
         marginLeft: theme.spacing(0.5),
         marginRight: theme.spacing(0.5),
         width: theme.spacing(32),
+        padding: '0px',
         height: '100%',
-        flexDirection: 'column',
         display: 'inline-block',
         overflowY: 'auto',
+        flexDirection: 'column',
     },
+    ColumnName: {
+        textAlign: 'center',
+        backgroundColor: theme.palette.background.paper,
+    }
+
 }));
 
 const Column = () => {
@@ -19,13 +25,15 @@ const Column = () => {
 
     return (
         <List className={classes.root}>
-            <h3>test</h3>
+            <ListSubheader className={classes.ColumnName} >I'm sticky </ListSubheader>
             <Item />
             <Item />
             <Item />
             <Item />
             <Item />
         </List>
+
+
     );
 }
 

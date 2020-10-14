@@ -1,8 +1,6 @@
-import Chatwindow from "../components/chatWindow";
 import Sidebar from '../components/SideBar';
+import Home from "../components/Home";
 import { createStyles, List, makeStyles } from "@material-ui/core"
-
-
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -10,7 +8,8 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
-const channel = () => {
+
+const Blog = () => {
     //通信するためのSocket
     //const socket = io();
     const classes = useStyles();
@@ -19,10 +18,10 @@ const channel = () => {
     return (
         <div className={classes.root}>
             <Sidebar />
-            <Chatwindow />
+            <Home />
         </div>
     );
 
 }
 
-export default channel;
+export default Blog;
