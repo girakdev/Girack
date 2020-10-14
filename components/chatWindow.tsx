@@ -98,7 +98,6 @@ const chatWindow = () => {
         setPost([...posts, tmpPost]);
         localStorage.setItem('posts', JSON.stringify([...posts, tmpPost]));
         setTmpPost("");
-
     };
 
     /*これは一時的なものなので消去予定*/
@@ -111,7 +110,23 @@ const chatWindow = () => {
     const s = mon + "/" + day + " " + hour + ":" + min;
     /*------------------*/
 
+    // ref を作成しスクロールさせたい場所にある Element にセット
+    const ref = React.createRef<HTMLDivElement>()
+    const scrollToBottomOfList = React.useCallback(() => {
+        ref!.current!.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end',
+        })
+    }, [ref])
 
+
+    React.useEffect(() => {
+        scrollToBottomOfList()
+    }, [])
+
+    const handleClick = () => {
+        scrollToBottomOfList();
+    }
 
     return (
         <div className={classes.root}>
@@ -123,6 +138,7 @@ const chatWindow = () => {
 
             <Divider />
             <div className={classes.chatWL}>
+
                 {posts.map((post, index) => (
                     <div key={(index)}>
                         <div className={classes.postText}>
@@ -136,8 +152,9 @@ const chatWindow = () => {
                         </div>
                     </div>
                 ))}
-
+                <div ref={ref} />
             </div>
+
             <div className={classes.bottomPosition}>
                 <div className={classes.chatInputStyle}>
                     <span style={{ float: "left", marginRight: "3px", width: "100%" }}>
@@ -146,9 +163,11 @@ const chatWindow = () => {
                             onKeyPress={e => {
                                 if (e.key == 'Enter') {
                                     addPost();
+                                    handleClick();
                                     e.preventDefault();
                                 }
                             }
+
                             } />
                         {/*<Button variant="contained" color="primary" onClick={addPost}>送信</Button>*/}
                     </span>
