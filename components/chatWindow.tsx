@@ -29,11 +29,13 @@ const useStyles = makeStyles((theme) => createStyles({
     chatHead: {
         marginTop: "10px",
         marginLeft: "20px",
-        fontSize: "10px",
+        marginButtom: "10px",
+        fontSize: "13px",
     },
     topicText: {
         paddingLeft: '10px',
         fontSize: "15px",
+        paddingButtom: "20px",
     },
     chatWL: {
         width: "100%",
