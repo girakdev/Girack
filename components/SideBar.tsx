@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => createStyles({
             duration: theme.transitions.duration.enteringScreen,
         }),
         overflowX: 'hidden',
-        background: theme.palette.primary.main,
     },
     drawerClose: {
         transition: theme.transitions.create('width', {
@@ -46,7 +45,6 @@ const useStyles = makeStyles((theme) => createStyles({
         }),
         overflowX: 'hidden',
         width: theme.spacing(7),
-        background: theme.palette.primary.main,
     },
     drawerFooter: {
         width: '100%',
