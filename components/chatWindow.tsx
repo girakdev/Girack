@@ -9,6 +9,10 @@ import HomeIcon from '@material-ui/icons/Home';
 
 import PostNote from './PostStyle'
 import axios from 'axios';
+import { get } from 'http';
+
+
+
 
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -87,10 +91,10 @@ const chatWindow = () => {
     const channelID = router.query.id;
     const topicText = "testtest"
 
+
     /* postの処理 */
     const [posts, setPost] = React.useState([]);
     const [tmpPost, setTmpPost] = React.useState("");
-
 
     const addPost = () => {
         if (tmpPost === "") {
@@ -100,6 +104,18 @@ const chatWindow = () => {
         setPost([...posts, tmpPost]);
         localStorage.setItem('posts', JSON.stringify([...posts, tmpPost]));
         setTmpPost("");
+
+        /*API Post*/
+        const args = {
+            channel: channelID,
+            text: tmpPost,
+        }
+
+        axios.post("http://localhost:3001/v1/message", args)
+        /*.then(function (response) {
+            console.log(response.data)
+        })*/
+        getText();
     };
 
     /*これは一時的なものなので消去予定*/
@@ -121,14 +137,24 @@ const chatWindow = () => {
         })
     }, [ref])
 
+    /*get処理まだできてません*/
+    const getText = () => {
+        /*-- get 処理--*/
+        axios.get('http://localhost:3001/v1/message', {
+            params: {
+                // ここにクエリパラメータを指定する
+                channel: router.query.id,
+            }
+        }).then(function (response) {
+            console.log(response.data);
+        })
+        /*-end- */
+    }
+    /*------end-----*/
 
     React.useEffect(() => {
         scrollToBottomOfList()
     }, [])
-
-    const handleClick = () => {
-        scrollToBottomOfList();
-    }
 
     return (
         <div className={classes.root}>
@@ -141,12 +167,14 @@ const chatWindow = () => {
             <Divider />
             <div className={classes.chatWL}>
 
+
+
                 {posts.map((post, index) => (
                     <div key={(index)}>
 
                         <div className={classes.postText}>
                             <div className={classes.userPostIcon}>
-                                <Avatar alt="Remy Sharp" src="https://nos3.arkjp.net/?url=https%3A%2F%2Fimg.pawoo.net%2Faccounts%2Favatars%2F000%2F787%2F070%2Foriginal%2F17496375cdc.gif&thumbnail=1" />
+                                <Avatar alt="Remy Sharp" src="" />
                             </div>
                             <div>
                                 <div className={classes.userPostname} >user1
@@ -169,8 +197,9 @@ const chatWindow = () => {
                             onKeyPress={e => {
                                 if (e.key == 'Enter') {
                                     addPost();
-                                    handleClick();
                                     e.preventDefault();
+                                    scrollToBottomOfList()
+                                    getText();
                                 }
                             }
 
