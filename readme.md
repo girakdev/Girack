@@ -1,8 +1,7 @@
 # Girack
 開発中。
-起動、UIレンダーまではします。
 
-## 始め方
+## 起動方法
 まずGirakbackendを起動させます
 方法は↓
 https://github.com/girakdev/girack-backend
