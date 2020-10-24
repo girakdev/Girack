@@ -38,7 +38,7 @@ const chatWin = () => {
         <div className={classes.root}>
             <div className={classes.serverNameStyle}>
                 <div>
-                    <Avatar alt="Remy Sharp" src="https://nos3.arkjp.net/?url=https%3A%2F%2Fimg.pawoo.net%2Faccounts%2Favatars%2F000%2F787%2F070%2Foriginal%2F17496375cdc.gif&thumbnail=1" />
+                    <Avatar alt="Remy Sharp" src="" />
                 </div>
                 <div className={classes.server}>
                     {serverName}

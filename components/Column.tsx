@@ -1,6 +1,13 @@
 import React from 'react';
-import { createStyles, List, makeStyles, ListSubheader } from "@material-ui/core"
+import { createStyles, List, makeStyles, ListSubheader, Button } from "@material-ui/core"
 import Item from './Item'
+
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -13,9 +20,18 @@ const useStyles = makeStyles((theme) => createStyles({
         overflowY: 'auto',
         flexDirection: 'column',
     },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+        width: "100%",
+    },
     ColumnName: {
         textAlign: 'center',
         backgroundColor: theme.palette.background.paper,
+        padding: "0px",
+    },
+    SlectButton: {
+        width: "100%",
     }
 
 }));
@@ -25,13 +41,29 @@ const Column = () => {
 
     return (
         <List className={classes.root}>
-            <ListSubheader className={classes.ColumnName} >I'm sticky </ListSubheader>
+            <ListSubheader className={classes.ColumnName} >
+                <Accordion>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    >
+                        <Typography className={classes.heading}> I'm sticky</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography className={classes.SlectButton}>
+                            <Button >
+                                <div>Delete</div>
+                                <span><DeleteIcon /></span>
+                            </Button>
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+            </ListSubheader>
             <Item />
             <Item />
             <Item />
             <Item />
             <Item />
-        </List>
+        </List >
 
 
     );
