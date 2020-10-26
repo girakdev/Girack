@@ -3,7 +3,7 @@
 
 ## 起動方法
 まずGirakbackendを起動させます
-方法は↓
+方法は→
 https://github.com/girakdev/girack-backend
 
 起動させたら
