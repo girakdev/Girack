@@ -6,13 +6,10 @@ import { useRouter } from 'next/router';
 import theme from '../../src/theme';
 import HomeIcon from '@material-ui/icons/Home';
 
-
+import GetMessage from './getChatMessage'
 import PostNote from './PostStyle'
 import axios from 'axios';
 import { get } from 'http';
-
-
-
 
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -92,6 +89,7 @@ const chatWindow = () => {
     const topicText = "testtest"
 
 
+
     /* postの処理 */
     const [posts, setPost] = React.useState([]);
     const [tmpPost, setTmpPost] = React.useState("");
@@ -115,8 +113,9 @@ const chatWindow = () => {
         /*.then(function (response) {
             console.log(response.data)
         })*/
-        getText();
     };
+
+
 
     /*これは一時的なものなので消去予定*/
     const now = new Date();
@@ -124,7 +123,6 @@ const chatWindow = () => {
     const day = now.getDate();
     const hour = now.getHours();
     const min = now.getMinutes();
-    const sec = now.getSeconds();
     const s = mon + "/" + day + " " + hour + ":" + min;
     /*------------------*/
 
@@ -137,25 +135,14 @@ const chatWindow = () => {
         })
     }, [ref])
 
-    /*get処理まだできてません*/
-    const getText = () => {
-        /*-- get 処理--*/
-        axios.get('http://localhost:3001/v1/message', {
-            params: {
-                // ここにクエリパラメータを指定する
-                channel: router.query.id,
-            }
-        }).then(function (response) {
-            console.log(response.data);
-        })
-        /*-end- */
-    }
-    /*------end-----*/
+
+
 
     React.useEffect(() => {
-        scrollToBottomOfList()
-    }, [])
-
+        if (router.asPath !== router.route) {
+            scrollToBottomOfList()
+        }
+    }, [router])
     return (
         <div className={classes.root}>
             <div className={classes.chatHead}>
@@ -163,12 +150,10 @@ const chatWindow = () => {
                 <h2 className={classes.channelText}>#{channelID}</h2>
                 <div className={classes.topicText}>topic:{topicText}</div>
             </div>
-
             <Divider />
+
             <div className={classes.chatWL}>
-
-
-
+                <GetMessage />
                 {posts.map((post, index) => (
                     <div key={(index)}>
 
@@ -198,8 +183,7 @@ const chatWindow = () => {
                                 if (e.key == 'Enter') {
                                     addPost();
                                     e.preventDefault();
-                                    scrollToBottomOfList()
-                                    getText();
+                                    scrollToBottomOfList();
                                 }
                             }
 
