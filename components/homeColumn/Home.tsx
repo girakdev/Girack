@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, List, makeStyles, Button, ListSubheader } from "@material-ui/core"
-import Column from "../components/Column"
+import Column from "./Column"
 import AddIcon from '@material-ui/icons/Add';
 
 import Card from '@material-ui/core/Card';

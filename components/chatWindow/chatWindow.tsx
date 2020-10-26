@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Divider, TextField, Paper, Button, Badge, Avatar } from '@material-ui/core';
 import { useRouter } from 'next/router';
-import theme from '../src/theme';
+import theme from '../../src/theme';
 import HomeIcon from '@material-ui/icons/Home';
 
 
