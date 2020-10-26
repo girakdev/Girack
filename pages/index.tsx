@@ -1,5 +1,5 @@
-import Sidebar from '../components/SideBar';
-import Home from "../components/Home";
+import Sidebar from '../components/Sideber/SideBar';
+import Home from "../components/homeColumn/Home";
 import { createStyles, List, makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => createStyles({

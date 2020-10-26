@@ -1,5 +1,5 @@
 import { createStyles, List, makeStyles } from "@material-ui/core"
-import Sidebar from '../components/SideBar';
+import Sidebar from '../components/Sideber/SideBar';
 
 
 const useStyles = makeStyles((theme) => createStyles({

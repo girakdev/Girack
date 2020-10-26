@@ -3,7 +3,7 @@ import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Grid, Button, Divider, NoSsr, createStyles, Avatar } from '@material-ui/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import theme from '../src/theme';
+import theme from '../../src/theme';
 import HomeIcon from '@material-ui/icons/Home';
 
 
