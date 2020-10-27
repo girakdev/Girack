@@ -115,8 +115,6 @@ const chatWindow = () => {
         })*/
     };
 
-
-
     /*これは一時的なものなので消去予定*/
     const now = new Date();
     const mon = now.getMonth() + 1; //１を足すこと
