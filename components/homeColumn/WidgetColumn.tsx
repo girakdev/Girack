@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStyles, List, makeStyles, ListSubheader, Button } from "@material-ui/core"
 import StickyNote from './StickyNote'
+import Todolist from './Todolist'
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => createStyles({
 
 }));
 
-const Column = () => {
+const WidgetColumn = () => {
     const classes = useStyles();
 
     return (
@@ -57,8 +57,9 @@ const Column = () => {
                 </Accordion>
             </ListSubheader>
             <StickyNote />
+            <Todolist />
         </List >
     );
 }
 
-export default Column;
+export default WidgetColumn;

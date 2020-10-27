@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => createStyles({
     }
 }));
 
-const Item = () => {
+const StickeyNote = () => {
     const classes = useStyles();
 
     return (
@@ -40,4 +40,4 @@ const Item = () => {
     );
 }
 
-export default Item;
+export default StickeyNote;
