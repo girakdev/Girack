@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, List, makeStyles, Button, ListSubheader } from "@material-ui/core"
-import Column from "./Column"
+import Column from './Column'
+import WidgetColumn from './WidgetColumn'
 import AddIcon from '@material-ui/icons/Add';
 
 import Card from '@material-ui/core/Card';
@@ -42,12 +43,13 @@ const ColumnList = () => {
 
     return (
         <List className={classes.root}>
+            <WidgetColumn />
             {Columns.map((post, index) => (
                 <Column key={(index)} />
             ))}
 
             <List className={classes.addColumn}>
-                <ListSubheader className={classes.AddColumnButton}><Button onClick={addColumn}> sticky</Button> </ListSubheader>
+                <ListSubheader className={classes.AddColumnButton}><Button onClick={addColumn}> <AddIcon /></Button> </ListSubheader>
             </List>
         </List>
     );
