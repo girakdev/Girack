@@ -4,10 +4,6 @@ import Column from './Column'
 import WidgetColumn from './WidgetColumn'
 import AddIcon from '@material-ui/icons/Add';
 
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-
 const useStyles = makeStyles((theme) => createStyles({
     root: {
         height: '100vh',
