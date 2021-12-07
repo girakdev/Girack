@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => createStyles({
     },
     heading: {
         fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
         width: "100%",
     },
     ColumnName: {
