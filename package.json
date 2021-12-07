@@ -13,7 +13,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.21.2",
     "express": "^4.17.1",
-    "next": "^9.5.4",
+    "next": "^11.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "socket.io": "^2.4.0",
