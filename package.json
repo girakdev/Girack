@@ -8,22 +8,22 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@material-ui/core": "^4.10.0",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56",
-    "axios": "^0.21.2",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "axios": "^0.24.0",
     "express": "^4.17.1",
-    "next": "^11.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "socket.io": "^2.4.0",
-    "socket.io-client": "^2.3.0"
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "socket.io": "^4.4.0",
+    "socket.io-client": "^4.4.0"
   },
   "main": "server.js",
   "devDependencies": {
-    "@types/node": "^14.11.1",
-    "@types/react": "^16.9.49",
-    "typescript": "^4.0.3"
+    "@types/node": "^16.11.11",
+    "@types/react": "^17.0.37",
+    "typescript": "^4.5.2"
   },
   "keywords": [],
   "author": "",
