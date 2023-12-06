@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+// スクロール
+.scroll_bar {
+  overflow-y: scroll;
+}
+.scroll_bar::-webkit-scrollbar {
+  width: 4px;
+}
+.scroll_bar::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+.scroll_bar::-webkit-scrollbar-thumb {
+  background-color: #17585d;
+}
