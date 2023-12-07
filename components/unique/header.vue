@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div class="header__channel">
+  <div class="header bg-indigo-800">
+    <div class="header__channel text-slate-100">
       <div>#{{ props.channelName }}</div>
     </div>
   </div>
@@ -15,7 +15,6 @@ const props = withDefaults(defineProps<Props>(), {});
 
 <style lang="scss">
 .header {
-  background-color: $surface;
   width: calc(100vw - 240px);
   height: 48px;
   &__channel {

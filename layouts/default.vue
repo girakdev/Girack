@@ -1,14 +1,8 @@
 <template>
-  <div class="main">
+  <div class="flex bg-indigo-900">
     <UniqueSideBer />
-    <div class="content">
+    <div>
       <slot />
     </div>
   </div>
 </template>
-
-<style lang="scss">
-.main {
-  display: flex;
-}
-</style>

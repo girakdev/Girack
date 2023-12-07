@@ -1,32 +1,37 @@
 <template>
-  <div class="sideBer">
-    <img
-      class="sideBer__server__logo"
-      src="https://girak.moe/proxy/avatar.webp?url=https%3A%2F%2Fgirak.moe%2Ffiles%2Ff881b52c-8372-4b6f-944e-e428719be52a&avatar=1"
-    />
-    <div class="sideBer__user">
-      <img
-        class="sideBer__user__icon"
-        src="https://girak.moe/proxy/avatar.webp?url=https%3A%2F%2Fgirak.moe%2Ffiles%2Ff881b52c-8372-4b6f-944e-e428719be52a&avatar=1"
-      />
-      <div class="sideBer__user__name">UserName</div>
+  <div class="w-60 h-screen bg-indigo-800 text-slate-100">
+    <div
+      class="flex justify-center gap-4 items-center h-32 bg-gradient-to-r from-indigo-500"
+    >
+      <div class="text-center text-lg">画像</div>
     </div>
-    <div class="sideBer__channel scroll_bar">
-      <div
-        v-for="channel in channels"
-        :key="channel.id"
-        class="sideBer__channel__list"
-      >
+    <div
+      class="text-xl px-4 py-2 my-1 mx-2 bg-indigo-400 rounded-md cursor-pointer"
+      @click="router.push('/')"
+    >
+      TOP
+    </div>
+    <div class="overflow-auto h-[calc(100vh_-_120px_-_65px_-_64px)] px-2">
+      <div v-for="channel in channels" :key="channel.id" class="">
         <div
-          class="sideBer__channel__name"
+          class="text-2xl mt-2 rounded-md"
           @click="channelMove(channel.id)"
           :class="{
-            'sideBer__channel__name--active': channel.id === pathId,
+            'bg-indigo-400': channel.id === pathId,
           }"
         >
           -_-{{ channel.name }}>
         </div>
       </div>
+    </div>
+    <div
+      class="flex justify-start gap-4 px-1 items-center h-16 bg-gradient-to-r from-indigo-500"
+    >
+      <img
+        class="w-12 rounded-full"
+        src="https://girak.moe/proxy/avatar.webp?url=https%3A%2F%2Fgirak.moe%2Ffiles%2Ff881b52c-8372-4b6f-944e-e428719be52a&avatar=1"
+      />
+      <div class="text-center text-lg">UserName</div>
     </div>
   </div>
 </template>
@@ -47,14 +52,13 @@ for (let i = 0; i < 30; i++) {
 }
 
 const channelMove = (id: string) => {
-  router.push(id);
+  router.push("/channel/" + id);
   pathId.value = id;
 };
 </script>
 
 <style lang="scss">
 .sideBer {
-  background-color: $surface;
   width: 240px;
   height: 100vh;
   &__server__logo {
