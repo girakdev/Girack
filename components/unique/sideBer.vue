@@ -3,7 +3,7 @@
     <div
       class="flex justify-center gap-4 items-center h-32 bg-gradient-to-r from-indigo-500"
     >
-      <div class="text-center text-lg">画像</div>
+      <div class="text-center text-lg">{{ props.serverData ?? "" }}</div>
     </div>
     <div
       class="text-xl px-4 py-2 my-1 mx-2 bg-indigo-400 rounded-md cursor-pointer"
@@ -38,10 +38,16 @@
 
 <script setup lang="ts">
 import { type getchannelList } from "~/types/channel";
+import type { ServerInfo } from "~/types/serverInfo";
 const router = useRouter();
-const route = useRoute();
 const pathId = ref<string>("");
-// お問い合わせ内容の状態を管理
+
+interface Prop {
+  serverData: ServerInfo | null;
+}
+
+const props = withDefaults(defineProps<Prop>(), {});
+
 const channels = ref<getchannelList[]>([]);
 for (let i = 0; i < 30; i++) {
   const test = {
