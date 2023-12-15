@@ -3,24 +3,30 @@
     <div
       class="flex justify-center gap-4 items-center h-32 bg-gradient-to-r from-indigo-500"
     >
-      <div class="text-center text-lg">{{ props.serverData ?? "" }}</div>
+      <div class="text-center text-lg">
+        {{ props.serverData?.servername ?? "" }}<br />
+        {{ props.serverData?.serverVersion ?? "" }}
+      </div>
     </div>
     <div
-      class="text-xl px-4 py-2 my-1 mx-2 bg-indigo-400 rounded-md cursor-pointer"
+      class="text-xl px-4 py-2 my-1 mx-2 rounded-md cursor-pointer"
+      :class="{
+        'bg-indigo-400': route.fullPath === '/',
+      }"
       @click="router.push('/')"
     >
-      TOP
+      ホーム
     </div>
     <div class="overflow-auto h-[calc(100vh_-_120px_-_65px_-_64px)] px-2">
       <div v-for="channel in channels" :key="channel.id" class="">
         <div
-          class="text-2xl mt-2 rounded-md"
+          class="text-2xl mt-2 rounded-md align-middle py-1"
           @click="channelMove(channel.id)"
           :class="{
             'bg-indigo-400': channel.id === pathId,
           }"
         >
-          -_-{{ channel.name }}>
+          --{{ channel.name }}>
         </div>
       </div>
     </div>
@@ -39,6 +45,7 @@
 <script setup lang="ts">
 import { type getchannelList } from "~/types/channel";
 import type { ServerInfo } from "~/types/serverInfo";
+const route = useRoute();
 const router = useRouter();
 const pathId = ref<string>("");
 

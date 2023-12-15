@@ -1,6 +1,6 @@
 <template>
   <div class="flex bg-indigo-900">
-    <UniqueSideBer :serverData="null" />
+    <UniqueSideBer :serverData="test" />
     <div>
       <slot />
     </div>
@@ -12,15 +12,15 @@ import { storeToRefs } from "pinia";
 import { useServerInfoState } from "@/composables/store/serverInfo";
 import { girakV } from "~/socketIo/soket";
 import { serverInfoOn } from "~/socketIo/infoServer";
+import type { ServerInfo } from "~/types/serverInfo";
 
 const { setServerInfo } = useServerInfoState();
 const { serverData } = storeToRefs(useServerInfoState());
-// girakV.on("infoServer", (dat: ServerInfo) => {
-//   console.log(dat);
-//   setServerInfo(dat);
-// }
+const test = ref<ServerInfo | null>(null);
 
-const res = serverInfoOn;
+girakV.on("infoServer", (dat: ServerInfo) => {
+  test.value = dat;
+  return dat;
+});
 girakV.emit("getInfoServer");
-console.log(res);
 </script>

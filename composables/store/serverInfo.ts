@@ -10,6 +10,7 @@ export const useServerInfoState = defineStore("serverInfo", {
     }),
   getters: {
     serverData: (state) => {
+      console.log(state._serverInfo);
       return state._serverInfo;
     },
   },
