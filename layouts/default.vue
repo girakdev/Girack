@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-indigo-900">
+  <div class="flex">
     <UniqueSideBer :serverData="test" />
     <div>
       <slot />

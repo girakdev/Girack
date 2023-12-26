@@ -1,7 +1,7 @@
 <template>
-  <div class="w-60 h-screen bg-indigo-800 text-slate-100">
+  <div class="w-60 h-screen bg-slate-800 text-slate-100">
     <div
-      class="flex justify-center gap-4 items-center h-32 bg-gradient-to-r from-indigo-500"
+      class="flex justify-center gap-4 items-center h-32 bg-gradient-to-r from-slate-700"
     >
       <div class="text-center text-lg">
         {{ props.serverData?.servername ?? "" }}<br />
@@ -11,19 +11,19 @@
     <div
       class="text-xl px-4 py-2 my-1 mx-2 rounded-md cursor-pointer"
       :class="{
-        'bg-indigo-400': route.fullPath === '/',
+        ' bg-slate-400': route.fullPath === '/',
       }"
-      @click="router.push('/')"
+      @click="router.push('/'), pathId=''"
     >
       ホーム
     </div>
     <div class="overflow-auto h-[calc(100vh_-_120px_-_65px_-_64px)] px-2">
       <div v-for="channel in channels" :key="channel.id" class="">
         <div
-          class="text-2xl mt-2 rounded-md align-middle py-1"
+          class="text-md mt-2 rounded-md align-middle py-1"
           @click="channelMove(channel.id)"
           :class="{
-            'bg-indigo-400': channel.id === pathId,
+            ' bg-slate-400': channel.id === pathId,
           }"
         >
           --{{ channel.name }}>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div
-      class="flex justify-start gap-4 px-1 items-center h-16 bg-gradient-to-r from-indigo-500"
+      class="flex justify-start gap-4 px-1 items-center h-16 bg-gradient-to-r from-slate-500"
     >
       <img
         class="w-12 rounded-full"

@@ -1,5 +1,5 @@
 <template>
-  <div class="header bg-indigo-800">
+  <div class="header bg-slate-800">
     <div class="header__channel text-slate-100">
       <div>#{{ props.channelName }}</div>
     </div>
